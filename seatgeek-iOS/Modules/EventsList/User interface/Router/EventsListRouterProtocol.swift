@@ -9,5 +9,5 @@
 import Foundation
 
 public protocol EventsListRouterProtocol {
-
+  func routeToEventsDetails()
 }

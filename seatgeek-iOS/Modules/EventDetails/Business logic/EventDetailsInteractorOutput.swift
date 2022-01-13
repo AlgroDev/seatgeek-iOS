@@ -1,5 +1,5 @@
 //
-//  EventsListInteractorOutput.swift
+//  EventDetailsInteractorOutput.swift
 //  seatgeek-iOS
 //
 //  Mobissiweb template version 1.0
@@ -10,7 +10,7 @@
 
 import Foundation
 
-public protocol EventsListInteractorOutput: AnyObject {
+public protocol EventDetailsInteractorOutput: AnyObject {
     func setDefaultValues()
     func notifyLoading()
     func notifyNoDataError()

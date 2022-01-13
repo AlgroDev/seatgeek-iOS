@@ -48,8 +48,7 @@ extension EventsListModuleFactory: EventsListModuleFactoryProtocol {
     let presenter = EventsListPresenter(dependencies: presenterDependencies)
 
 
-//    let viewController = StoryboardScene.EventsList.EventsListViewController.instantiate()
-    let viewController = EventsListViewController()
+    let viewController = StoryboardScene.EventsList.eventsListViewController.instantiate()
     viewController.dependencies = self
     interactorFactory.output = presenter
     self.presenter = presenter

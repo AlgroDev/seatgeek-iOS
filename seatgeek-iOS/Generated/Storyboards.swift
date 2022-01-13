@@ -12,6 +12,13 @@ import UIKit
 
 // swiftlint:disable explicit_type_interface identifier_name line_length type_body_length type_name
 internal enum StoryboardScene {
+  internal enum EventDetails: StoryboardType {
+    internal static let storyboardName = "EventDetails"
+
+    internal static let initialScene = InitialSceneType<seatgeek_iOS.EventDetailsViewController>(storyboard: EventDetails.self)
+
+    internal static let eventDetailsViewController = SceneType<seatgeek_iOS.EventDetailsViewController>(storyboard: EventDetails.self, identifier: "EventDetailsViewController")
+  }
   internal enum EventsList: StoryboardType {
     internal static let storyboardName = "EventsList"
 

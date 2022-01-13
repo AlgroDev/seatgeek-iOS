@@ -1,5 +1,5 @@
 //
-//  EventsListPresenterOutput.swift
+//  EventDetailsPresenterOutput.swift
 //  seatgeek-iOS
 //
 //  Created by Mohammed HIMOUD on 13/01/2022.
@@ -8,9 +8,9 @@
 
 import UIKit
 
-enum EventsListViewCategory {}
+enum EventDetailsViewCategory {}
 
-protocol EventsListPresenterOutput: AnyObject {
+protocol EventDetailsPresenterOutput: AnyObject {
   func showLoading()
   func hideLoading()
 }

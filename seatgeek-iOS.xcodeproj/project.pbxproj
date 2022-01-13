@@ -36,6 +36,21 @@
 		D7D71E5B278FEF5E00A98AB7 /* Loadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D71E5A278FEF5E00A98AB7 /* Loadable.swift */; };
 		D7D71E5D278FEF8B00A98AB7 /* Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D71E5C278FEF8B00A98AB7 /* Animation.swift */; };
 		D7D71E60278FEFD800A98AB7 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D71E5F278FEFD800A98AB7 /* UIView+Extensions.swift */; };
+		D7D71E7A278FF38700A98AB7 /* EventDetails.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D7D71E64278FF38700A98AB7 /* EventDetails.storyboard */; };
+		D7D71E7C278FF38700A98AB7 /* EventDetailsInteractorOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D71E66278FF38700A98AB7 /* EventDetailsInteractorOutput.swift */; };
+		D7D71E7D278FF38700A98AB7 /* EventDetailsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D71E67278FF38700A98AB7 /* EventDetailsPresenter.swift */; };
+		D7D71E7E278FF38700A98AB7 /* EventDetailsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D71E68278FF38700A98AB7 /* EventDetailsRouter.swift */; };
+		D7D71E80278FF38700A98AB7 /* EventDetailsInteractorInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D71E6A278FF38700A98AB7 /* EventDetailsInteractorInput.swift */; };
+		D7D71E82278FF38700A98AB7 /* EventDetailsInteractorModuleFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D71E6C278FF38700A98AB7 /* EventDetailsInteractorModuleFactory.swift */; };
+		D7D71E83278FF38700A98AB7 /* EventDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D71E6D278FF38700A98AB7 /* EventDetailsViewController.swift */; };
+		D7D71E85278FF38700A98AB7 /* EventDetailsPresenterInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D71E6F278FF38700A98AB7 /* EventDetailsPresenterInput.swift */; };
+		D7D71E86278FF38700A98AB7 /* EventDetailsInteractorDataSourceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D71E70278FF38700A98AB7 /* EventDetailsInteractorDataSourceProtocol.swift */; };
+		D7D71E87278FF38700A98AB7 /* EventDetailsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D71E71278FF38700A98AB7 /* EventDetailsInteractor.swift */; };
+		D7D71E88278FF38700A98AB7 /* EventDetailsPresenterOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D71E72278FF38700A98AB7 /* EventDetailsPresenterOutput.swift */; };
+		D7D71E89278FF38700A98AB7 /* EventDetailsInteractorModuleFactoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D71E73278FF38700A98AB7 /* EventDetailsInteractorModuleFactoryProtocol.swift */; };
+		D7D71E8A278FF38700A98AB7 /* EventDetailsModuleFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D71E74278FF38700A98AB7 /* EventDetailsModuleFactory.swift */; };
+		D7D71E8B278FF38700A98AB7 /* EventDetailsRouterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D71E75278FF38700A98AB7 /* EventDetailsRouterProtocol.swift */; };
+		D7D71E8E278FF38700A98AB7 /* EventDetailsInteractorDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D71E78278FF38700A98AB7 /* EventDetailsInteractorDataSource.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -71,6 +86,21 @@
 		D7D71E5A278FEF5E00A98AB7 /* Loadable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Loadable.swift; sourceTree = "<group>"; };
 		D7D71E5C278FEF8B00A98AB7 /* Animation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animation.swift; sourceTree = "<group>"; };
 		D7D71E5F278FEFD800A98AB7 /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
+		D7D71E64278FF38700A98AB7 /* EventDetails.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EventDetails.storyboard; sourceTree = "<group>"; };
+		D7D71E66278FF38700A98AB7 /* EventDetailsInteractorOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailsInteractorOutput.swift; sourceTree = "<group>"; };
+		D7D71E67278FF38700A98AB7 /* EventDetailsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailsPresenter.swift; sourceTree = "<group>"; };
+		D7D71E68278FF38700A98AB7 /* EventDetailsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailsRouter.swift; sourceTree = "<group>"; };
+		D7D71E6A278FF38700A98AB7 /* EventDetailsInteractorInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailsInteractorInput.swift; sourceTree = "<group>"; };
+		D7D71E6C278FF38700A98AB7 /* EventDetailsInteractorModuleFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailsInteractorModuleFactory.swift; sourceTree = "<group>"; };
+		D7D71E6D278FF38700A98AB7 /* EventDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailsViewController.swift; sourceTree = "<group>"; };
+		D7D71E6F278FF38700A98AB7 /* EventDetailsPresenterInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailsPresenterInput.swift; sourceTree = "<group>"; };
+		D7D71E70278FF38700A98AB7 /* EventDetailsInteractorDataSourceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailsInteractorDataSourceProtocol.swift; sourceTree = "<group>"; };
+		D7D71E71278FF38700A98AB7 /* EventDetailsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailsInteractor.swift; sourceTree = "<group>"; };
+		D7D71E72278FF38700A98AB7 /* EventDetailsPresenterOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailsPresenterOutput.swift; sourceTree = "<group>"; };
+		D7D71E73278FF38700A98AB7 /* EventDetailsInteractorModuleFactoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailsInteractorModuleFactoryProtocol.swift; sourceTree = "<group>"; };
+		D7D71E74278FF38700A98AB7 /* EventDetailsModuleFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailsModuleFactory.swift; sourceTree = "<group>"; };
+		D7D71E75278FF38700A98AB7 /* EventDetailsRouterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailsRouterProtocol.swift; sourceTree = "<group>"; };
+		D7D71E78278FF38700A98AB7 /* EventDetailsInteractorDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailsInteractorDataSource.swift; sourceTree = "<group>"; };
 		FFB6A9424F5C2D7F6D15A522 /* Pods_seatgeek_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_seatgeek_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -179,6 +209,9 @@
 		D7D71E2C278FEECD00A98AB7 /* EventDetails */ = {
 			isa = PBXGroup;
 			children = (
+				D7D71E74278FF38700A98AB7 /* EventDetailsModuleFactory.swift */,
+				D7D71E90278FF3D000A98AB7 /* Business logic */,
+				D7D71E8F278FF3A100A98AB7 /* User interface */,
 			);
 			path = EventDetails;
 			sourceTree = "<group>";
@@ -204,13 +237,9 @@
 		D7D71E61278FF0CA00A98AB7 /* User interface */ = {
 			isa = PBXGroup;
 			children = (
-				D7D71E2E278FEEFC00A98AB7 /* EventsList.storyboard */,
-				D7D71E31278FEEFC00A98AB7 /* EventsListPresenter.swift */,
-				D7D71E32278FEEFC00A98AB7 /* EventsListRouter.swift */,
-				D7D71E37278FEEFC00A98AB7 /* EventsListViewController.swift */,
-				D7D71E39278FEEFC00A98AB7 /* EventsListPresenterInput.swift */,
-				D7D71E3C278FEEFC00A98AB7 /* EventsListPresenterOutput.swift */,
-				D7D71E3F278FEEFC00A98AB7 /* EventsListRouterProtocol.swift */,
+				D7D71E91278FF8EC00A98AB7 /* Presenter */,
+				D7D71E93278FF8FE00A98AB7 /* View */,
+				D7D71E92278FF8F600A98AB7 /* Router */,
 			);
 			path = "User interface";
 			sourceTree = "<group>";
@@ -218,15 +247,95 @@
 		D7D71E62278FF10E00A98AB7 /* Business logic */ = {
 			isa = PBXGroup;
 			children = (
-				D7D71E30278FEEFC00A98AB7 /* EventsListInteractorOutput.swift */,
-				D7D71E34278FEEFC00A98AB7 /* EventsListInteractorInput.swift */,
-				D7D71E36278FEEFC00A98AB7 /* EventsListInteractorModuleFactory.swift */,
-				D7D71E3A278FEEFC00A98AB7 /* EventsListInteractorDataSourceProtocol.swift */,
-				D7D71E3B278FEEFC00A98AB7 /* EventsListInteractor.swift */,
-				D7D71E3D278FEEFC00A98AB7 /* EventsListInteractorModuleFactoryProtocol.swift */,
-				D7D71E42278FEEFC00A98AB7 /* EventsListInteractorDataSource.swift */,
+				D7D71E96278FF9CF00A98AB7 /* Module factory */,
+				D7D71E94278FF9B200A98AB7 /* Interactor */,
+				D7D71E95278FF9C200A98AB7 /* Datasource */,
 			);
 			path = "Business logic";
+			sourceTree = "<group>";
+		};
+		D7D71E8F278FF3A100A98AB7 /* User interface */ = {
+			isa = PBXGroup;
+			children = (
+				D7D71E64278FF38700A98AB7 /* EventDetails.storyboard */,
+				D7D71E67278FF38700A98AB7 /* EventDetailsPresenter.swift */,
+				D7D71E68278FF38700A98AB7 /* EventDetailsRouter.swift */,
+				D7D71E6D278FF38700A98AB7 /* EventDetailsViewController.swift */,
+				D7D71E6F278FF38700A98AB7 /* EventDetailsPresenterInput.swift */,
+				D7D71E72278FF38700A98AB7 /* EventDetailsPresenterOutput.swift */,
+				D7D71E75278FF38700A98AB7 /* EventDetailsRouterProtocol.swift */,
+			);
+			path = "User interface";
+			sourceTree = "<group>";
+		};
+		D7D71E90278FF3D000A98AB7 /* Business logic */ = {
+			isa = PBXGroup;
+			children = (
+				D7D71E66278FF38700A98AB7 /* EventDetailsInteractorOutput.swift */,
+				D7D71E6A278FF38700A98AB7 /* EventDetailsInteractorInput.swift */,
+				D7D71E6C278FF38700A98AB7 /* EventDetailsInteractorModuleFactory.swift */,
+				D7D71E70278FF38700A98AB7 /* EventDetailsInteractorDataSourceProtocol.swift */,
+				D7D71E71278FF38700A98AB7 /* EventDetailsInteractor.swift */,
+				D7D71E73278FF38700A98AB7 /* EventDetailsInteractorModuleFactoryProtocol.swift */,
+				D7D71E78278FF38700A98AB7 /* EventDetailsInteractorDataSource.swift */,
+			);
+			path = "Business logic";
+			sourceTree = "<group>";
+		};
+		D7D71E91278FF8EC00A98AB7 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				D7D71E31278FEEFC00A98AB7 /* EventsListPresenter.swift */,
+				D7D71E39278FEEFC00A98AB7 /* EventsListPresenterInput.swift */,
+				D7D71E3C278FEEFC00A98AB7 /* EventsListPresenterOutput.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		D7D71E92278FF8F600A98AB7 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				D7D71E32278FEEFC00A98AB7 /* EventsListRouter.swift */,
+				D7D71E3F278FEEFC00A98AB7 /* EventsListRouterProtocol.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		D7D71E93278FF8FE00A98AB7 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D7D71E2E278FEEFC00A98AB7 /* EventsList.storyboard */,
+				D7D71E37278FEEFC00A98AB7 /* EventsListViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		D7D71E94278FF9B200A98AB7 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				D7D71E30278FEEFC00A98AB7 /* EventsListInteractorOutput.swift */,
+				D7D71E34278FEEFC00A98AB7 /* EventsListInteractorInput.swift */,
+				D7D71E3B278FEEFC00A98AB7 /* EventsListInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		D7D71E95278FF9C200A98AB7 /* Datasource */ = {
+			isa = PBXGroup;
+			children = (
+				D7D71E3A278FEEFC00A98AB7 /* EventsListInteractorDataSourceProtocol.swift */,
+				D7D71E42278FEEFC00A98AB7 /* EventsListInteractorDataSource.swift */,
+			);
+			path = Datasource;
+			sourceTree = "<group>";
+		};
+		D7D71E96278FF9CF00A98AB7 /* Module factory */ = {
+			isa = PBXGroup;
+			children = (
+				D7D71E36278FEEFC00A98AB7 /* EventsListInteractorModuleFactory.swift */,
+				D7D71E3D278FEEFC00A98AB7 /* EventsListInteractorModuleFactoryProtocol.swift */,
+			);
+			path = "Module factory";
 			sourceTree = "<group>";
 		};
 		ECD562F48FBE5932C5AD3A58 /* Frameworks */ = {
@@ -298,6 +407,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D7D71E7A278FF38700A98AB7 /* EventDetails.storyboard in Resources */,
 				D7D71E14278FE60100A98AB7 /* LaunchScreen.storyboard in Resources */,
 				D7D71E20278FEA6600A98AB7 /* Localizable.strings in Resources */,
 				D7D71E11278FE60100A98AB7 /* Assets.xcassets in Resources */,
@@ -378,23 +488,37 @@
 				D7D71E29278FEACC00A98AB7 /* Storyboards.swift in Sources */,
 				D7D71E47278FEEFC00A98AB7 /* EventsListPresenter.swift in Sources */,
 				D7D71E0C278FE60000A98AB7 /* ViewController.swift in Sources */,
+				D7D71E82278FF38700A98AB7 /* EventDetailsInteractorModuleFactory.swift in Sources */,
 				D7D71E58278FEEFC00A98AB7 /* EventsListInteractorDataSource.swift in Sources */,
 				D7D71E55278FEEFC00A98AB7 /* EventsListRouterProtocol.swift in Sources */,
+				D7D71E88278FF38700A98AB7 /* EventDetailsPresenterOutput.swift in Sources */,
+				D7D71E7C278FF38700A98AB7 /* EventDetailsInteractorOutput.swift in Sources */,
+				D7D71E83278FF38700A98AB7 /* EventDetailsViewController.swift in Sources */,
 				D7D71E48278FEEFC00A98AB7 /* EventsListRouter.swift in Sources */,
 				D7D71E60278FEFD800A98AB7 /* UIView+Extensions.swift in Sources */,
+				D7D71E8B278FF38700A98AB7 /* EventDetailsRouterProtocol.swift in Sources */,
+				D7D71E7D278FF38700A98AB7 /* EventDetailsPresenter.swift in Sources */,
+				D7D71E80278FF38700A98AB7 /* EventDetailsInteractorInput.swift in Sources */,
+				D7D71E86278FF38700A98AB7 /* EventDetailsInteractorDataSourceProtocol.swift in Sources */,
 				D7D71E4A278FEEFC00A98AB7 /* EventsListInteractorInput.swift in Sources */,
 				D7D71E4F278FEEFC00A98AB7 /* EventsListPresenterInput.swift in Sources */,
+				D7D71E89278FF38700A98AB7 /* EventDetailsInteractorModuleFactoryProtocol.swift in Sources */,
 				D7D71E08278FE60000A98AB7 /* AppDelegate.swift in Sources */,
 				D7D71E4D278FEEFC00A98AB7 /* EventsListViewController.swift in Sources */,
+				D7D71E8A278FF38700A98AB7 /* EventDetailsModuleFactory.swift in Sources */,
+				D7D71E7E278FF38700A98AB7 /* EventDetailsRouter.swift in Sources */,
 				D7D71E28278FEACC00A98AB7 /* GeneratedLocalizableStrings.swift in Sources */,
 				D7D71E52278FEEFC00A98AB7 /* EventsListPresenterOutput.swift in Sources */,
+				D7D71E8E278FF38700A98AB7 /* EventDetailsInteractorDataSource.swift in Sources */,
 				D7D71E54278FEEFC00A98AB7 /* EventsListModuleFactory.swift in Sources */,
 				D7D71E5D278FEF8B00A98AB7 /* Animation.swift in Sources */,
+				D7D71E87278FF38700A98AB7 /* EventDetailsInteractor.swift in Sources */,
 				D7D71E27278FEACC00A98AB7 /* GeneratedAssets.swift in Sources */,
 				D7D71E46278FEEFC00A98AB7 /* EventsListInteractorOutput.swift in Sources */,
 				D7D71E0A278FE60000A98AB7 /* SceneDelegate.swift in Sources */,
 				D7D71E53278FEEFC00A98AB7 /* EventsListInteractorModuleFactoryProtocol.swift in Sources */,
 				D7D71E51278FEEFC00A98AB7 /* EventsListInteractor.swift in Sources */,
+				D7D71E85278FF38700A98AB7 /* EventDetailsPresenterInput.swift in Sources */,
 				D7D71E50278FEEFC00A98AB7 /* EventsListInteractorDataSourceProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

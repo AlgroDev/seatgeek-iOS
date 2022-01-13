@@ -19,8 +19,6 @@ final class EventsListInteractor {
   // MARK: - Property
 
   weak var output: EventsListInteractorOutput?
-  private let orderedCategories: [EventsListCategory] = [
-  ]
 
   private var dataSource: EventsListInteractorDataSourceProtocol
   private let mainQueue = DispatchQueue.main
@@ -54,5 +52,21 @@ extension EventsListInteractor: EventsListInteractorInput {
   func retrieve() {
     output?.setDefaultValues()
     output?.notifyLoading()
+  }
+
+  func numberOfCategories() -> Int {
+    return 1
+  }
+
+  func numberOfItems(for categoryIndex: Int) -> Int {
+    return 1
+  }
+
+  func item(atIndex index: Int, for categoryIndex: Int) -> EventsListItemProtocol? {
+    return nil
+  }
+
+  func selectItem(atIndex index: Int, for categoryIndex: Int) {
+
   }
 }

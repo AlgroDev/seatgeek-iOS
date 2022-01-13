@@ -38,12 +38,36 @@ extension EventsListPresenter: EventsListPresenterInput {
   func viewDidLoad() {
     interactor.retrieve()
   }
+
+  func numberOfSections() -> Int {
+    interactor.numberOfCategories()
+  }
+
+  func numberOfRows(at section: Int) -> Int {
+    interactor.numberOfItems(for: section)
+  }
+
+  func viewItem(at indexPath: IndexPath) -> EventsListViewItemProtocol? {
+    return nil
+  }
+
+  func selectItem(at indexPath: IndexPath) {
+    interactor.selectItem(atIndex: indexPath.section, for: indexPath.row)
+  }
 }
 
 // MARK: - EventsListInteractorOutput
 
 extension EventsListPresenter: EventsListInteractorOutput {
   func setDefaultValues() {
+  }
+
+  func updateCategories() {
+    output?.reloadData()
+  }
+
+  func routeToEventsDetails() {
+    router.routeToEventsDetails()
   }
 
   func notifyLoading() {

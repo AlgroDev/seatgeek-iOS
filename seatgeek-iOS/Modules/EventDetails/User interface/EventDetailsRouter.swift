@@ -1,5 +1,5 @@
 //
-//  EventsListRouter.swift
+//  EventDetailsRouter.swift
 //  seatgeek-iOS
 //
 //  Created by Mohammed HIMOUD on 13/01/2022.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-open class EventsListRouter {
+open class EventDetailsRouter {
 
   // MARK: - Property
 
@@ -19,8 +19,8 @@ open class EventsListRouter {
   public init() { }
 }
 
-// MARK: - EventsListRouterProtocol
+// MARK: - EventDetailsRouterProtocol
 
-extension EventsListRouter: EventsListRouterProtocol {
+extension EventDetailsRouter: EventDetailsRouterProtocol {
 
 }

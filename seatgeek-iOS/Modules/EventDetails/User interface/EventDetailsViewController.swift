@@ -1,5 +1,5 @@
 //
-//  EventsListViewController.swift
+//  EventDetailsViewController.swift
 //  seatgeek-iOS
 //
 //  Created by Mohammed HIMOUD on 13/01/2022.
@@ -8,11 +8,11 @@
 
 import UIKit
 
-protocol EventsListViewDependenciesProtocol {
-  var presenter: EventsListPresenterInput! { get }
+protocol EventDetailsViewDependenciesProtocol {
+  var presenter: EventDetailsPresenterInput! { get }
 }
 
-class EventsListViewController: UIViewController, Loadable {
+class EventDetailsViewController: UIViewController, Loadable {
 
   // MARK: - Outlet
 
@@ -20,7 +20,7 @@ class EventsListViewController: UIViewController, Loadable {
 
   var viewsToHideDuringLoading: [UIView] { view.subviews }
   var activityIndicator: UIActivityIndicatorView?
-  var dependencies: EventsListViewDependenciesProtocol!
+  var dependencies: EventDetailsViewDependenciesProtocol!
 
   // MARK: - LifeCycle
 
@@ -30,9 +30,9 @@ class EventsListViewController: UIViewController, Loadable {
   }
 }
 
-// MARK: - EventsListPresenterOutput
+// MARK: - EventDetailsPresenterOutput
 
-extension EventsListViewController: EventsListPresenterOutput {
+extension EventDetailsViewController: EventDetailsPresenterOutput {
   func showLoading() {
     startLoading()
   }

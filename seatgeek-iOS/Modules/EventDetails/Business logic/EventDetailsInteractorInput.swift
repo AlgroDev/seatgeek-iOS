@@ -1,5 +1,5 @@
 //
-//  EventsListInteractorInput.swift
+//  EventDetailsInteractorInput.swift
 //  seatgeek-iOS
 //
 //  Mobissiweb template version 1.0
@@ -10,12 +10,12 @@
 
 import Foundation
 
-public enum EventsListCategory {
+public enum EventDetailsCategory {
 }
 
-extension EventsListCategory: Equatable {
-  public static func == (lhs: EventsListCategory,
-                         rhs: EventsListCategory) -> Bool {
+extension EventDetailsCategory: Equatable {
+  public static func == (lhs: EventDetailsCategory,
+                         rhs: EventDetailsCategory) -> Bool {
     switch (lhs, rhs) {
     default:
       return false
@@ -23,6 +23,6 @@ extension EventsListCategory: Equatable {
   }
 }
 
-public protocol EventsListInteractorInput {
+public protocol EventDetailsInteractorInput {
   func retrieve()
 }
