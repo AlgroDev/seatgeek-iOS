@@ -14,6 +14,10 @@
 		D7D71E0F278FE60000A98AB7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D7D71E0D278FE60000A98AB7 /* Main.storyboard */; };
 		D7D71E11278FE60100A98AB7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D7D71E10278FE60100A98AB7 /* Assets.xcassets */; };
 		D7D71E14278FE60100A98AB7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D7D71E12278FE60100A98AB7 /* LaunchScreen.storyboard */; };
+		D7D71E20278FEA6600A98AB7 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = D7D71E22278FEA6600A98AB7 /* Localizable.strings */; };
+		D7D71E27278FEACC00A98AB7 /* GeneratedAssets.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D71E24278FEACC00A98AB7 /* GeneratedAssets.swift */; };
+		D7D71E28278FEACC00A98AB7 /* GeneratedLocalizableStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D71E25278FEACC00A98AB7 /* GeneratedLocalizableStrings.swift */; };
+		D7D71E29278FEACC00A98AB7 /* Storyboards.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D71E26278FEACC00A98AB7 /* Storyboards.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +31,10 @@
 		D7D71E10278FE60100A98AB7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D7D71E13278FE60100A98AB7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D7D71E15278FE60100A98AB7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D7D71E21278FEA6600A98AB7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		D7D71E24278FEACC00A98AB7 /* GeneratedAssets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeneratedAssets.swift; sourceTree = "<group>"; };
+		D7D71E25278FEACC00A98AB7 /* GeneratedLocalizableStrings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeneratedLocalizableStrings.swift; sourceTree = "<group>"; };
+		D7D71E26278FEACC00A98AB7 /* Storyboards.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Storyboards.swift; sourceTree = "<group>"; };
 		FFB6A9424F5C2D7F6D15A522 /* Pods_seatgeek_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_seatgeek_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -48,7 +56,6 @@
 				11D14E61CFA0BBC6291F811C /* Pods-seatgeek-iOS.debug.xcconfig */,
 				5B4909EB14AD96703E4DE4CE /* Pods-seatgeek-iOS.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -73,15 +80,43 @@
 		D7D71E06278FE60000A98AB7 /* seatgeek-iOS */ = {
 			isa = PBXGroup;
 			children = (
+				D7D71E1C278FEA2600A98AB7 /* Resources */,
+				D7D71E1B278FEA1D00A98AB7 /* Generated */,
 				D7D71E07278FE60000A98AB7 /* AppDelegate.swift */,
 				D7D71E09278FE60000A98AB7 /* SceneDelegate.swift */,
 				D7D71E0B278FE60000A98AB7 /* ViewController.swift */,
 				D7D71E0D278FE60000A98AB7 /* Main.storyboard */,
-				D7D71E10278FE60100A98AB7 /* Assets.xcassets */,
 				D7D71E12278FE60100A98AB7 /* LaunchScreen.storyboard */,
 				D7D71E15278FE60100A98AB7 /* Info.plist */,
 			);
 			path = "seatgeek-iOS";
+			sourceTree = "<group>";
+		};
+		D7D71E1B278FEA1D00A98AB7 /* Generated */ = {
+			isa = PBXGroup;
+			children = (
+				D7D71E24278FEACC00A98AB7 /* GeneratedAssets.swift */,
+				D7D71E25278FEACC00A98AB7 /* GeneratedLocalizableStrings.swift */,
+				D7D71E26278FEACC00A98AB7 /* Storyboards.swift */,
+			);
+			path = Generated;
+			sourceTree = "<group>";
+		};
+		D7D71E1C278FEA2600A98AB7 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				D7D71E1D278FEA5200A98AB7 /* Localizable */,
+				D7D71E10278FE60100A98AB7 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		D7D71E1D278FEA5200A98AB7 /* Localizable */ = {
+			isa = PBXGroup;
+			children = (
+				D7D71E22278FEA6600A98AB7 /* Localizable.strings */,
+			);
+			path = Localizable;
 			sourceTree = "<group>";
 		};
 		ECD562F48FBE5932C5AD3A58 /* Frameworks */ = {
@@ -104,6 +139,7 @@
 				D7D71E01278FE60000A98AB7 /* Frameworks */,
 				D7D71E02278FE60000A98AB7 /* Resources */,
 				B004A02D78E5F8882946394D /* [CP] Embed Pods Frameworks */,
+				D7D71E23278FEA7200A98AB7 /* swiftgen */,
 			);
 			buildRules = (
 			);
@@ -153,6 +189,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D7D71E14278FE60100A98AB7 /* LaunchScreen.storyboard in Resources */,
+				D7D71E20278FEA6600A98AB7 /* Localizable.strings in Resources */,
 				D7D71E11278FE60100A98AB7 /* Assets.xcassets in Resources */,
 				D7D71E0F278FE60000A98AB7 /* Main.storyboard in Resources */,
 			);
@@ -177,6 +214,24 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-seatgeek-iOS/Pods-seatgeek-iOS-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		D7D71E23278FEA7200A98AB7 /* swiftgen */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = swiftgen;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n./Scripts/swiftgen.sh\n";
 		};
 		D89C30520A2DCF3754504EBE /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -207,8 +262,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D7D71E29278FEACC00A98AB7 /* Storyboards.swift in Sources */,
 				D7D71E0C278FE60000A98AB7 /* ViewController.swift in Sources */,
 				D7D71E08278FE60000A98AB7 /* AppDelegate.swift in Sources */,
+				D7D71E28278FEACC00A98AB7 /* GeneratedLocalizableStrings.swift in Sources */,
+				D7D71E27278FEACC00A98AB7 /* GeneratedAssets.swift in Sources */,
 				D7D71E0A278FE60000A98AB7 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -230,6 +288,14 @@
 				D7D71E13278FE60100A98AB7 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		D7D71E22278FEA6600A98AB7 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D7D71E21278FEA6600A98AB7 /* en */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
