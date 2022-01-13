@@ -1,3 +1,24 @@
-PODFILE CHECKSUM: 81dd52f1d4bfbdb6fdac762a270baf59203c69fd
+PODS:
+  - Alamofire (5.5.0)
+  - Kingfisher (6.3.0)
+  - SwiftGen (6.5.1)
+
+DEPENDENCIES:
+  - Alamofire (~> 5.5)
+  - Kingfisher (= 6.3.0)
+  - SwiftGen (= 6.5.1)
+
+SPEC REPOS:
+  trunk:
+    - Alamofire
+    - Kingfisher
+    - SwiftGen
+
+SPEC CHECKSUMS:
+  Alamofire: 1c4fb5369c3fe93d2857c780d8bbe09f06f97e7c
+  Kingfisher: 6c3df386db71d82c0817a429d2c9421a77396529
+  SwiftGen: a6d22010845f08fe18fbdf3a07a8e380fd22e0ea
+
+PODFILE CHECKSUM: 361feb522c3092f7e17beefd59677e119489c806
 
 COCOAPODS: 1.11.2

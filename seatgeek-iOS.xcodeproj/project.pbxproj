@@ -103,6 +103,7 @@
 				D7D71E00278FE60000A98AB7 /* Sources */,
 				D7D71E01278FE60000A98AB7 /* Frameworks */,
 				D7D71E02278FE60000A98AB7 /* Resources */,
+				B004A02D78E5F8882946394D /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -160,6 +161,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		B004A02D78E5F8882946394D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-seatgeek-iOS/Pods-seatgeek-iOS-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-seatgeek-iOS/Pods-seatgeek-iOS-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-seatgeek-iOS/Pods-seatgeek-iOS-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		D89C30520A2DCF3754504EBE /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
