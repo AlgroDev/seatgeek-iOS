@@ -36,6 +36,8 @@ public final class EventsListModuleFactory: EventsListViewDependenciesProtocol {
     let request = EventsListInteractorModuleFactoryRequest()
     return interactorFactory.makeResponse(from: request)
   }
+
+
 }
 
 // MARK: - EventsListModuleFactoryProtocol
@@ -48,7 +50,8 @@ extension EventsListModuleFactory: EventsListModuleFactoryProtocol {
     let presenter = EventsListPresenter(dependencies: presenterDependencies)
 
 
-    let viewController = StoryboardScene.EventsList.eventsListViewController.instantiate()
+    let storyboard = UIStoryboard(name: "EventsList", bundle: nil)
+    guard let viewController = storyboard.instantiateViewController(withIdentifier: "EventsListTableViewController") as? EventsListTableViewController else { return UIViewController()}
     viewController.dependencies = self
     interactorFactory.output = presenter
     self.presenter = presenter

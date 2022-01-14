@@ -1,5 +1,5 @@
 //
-//  EventsListViewController.swift
+//  EventsListTableViewController.swift
 //  seatgeek-iOS
 //
 //  Created by Mohammed HIMOUD on 13/01/2022.
@@ -12,7 +12,7 @@ protocol EventsListViewDependenciesProtocol {
   var presenter: EventsListPresenterInput! { get }
 }
 
-class EventsListViewController: UIViewController, Loadable {
+class EventsListTableViewController: UITableViewController, Loadable {
 
   // MARK: - Outlet
 
@@ -32,7 +32,7 @@ class EventsListViewController: UIViewController, Loadable {
 
 // MARK: - EventsListPresenterOutput
 
-extension EventsListViewController: EventsListPresenterOutput {
+extension EventsListTableViewController: EventsListPresenterOutput {
   func reloadData() {
 
   }

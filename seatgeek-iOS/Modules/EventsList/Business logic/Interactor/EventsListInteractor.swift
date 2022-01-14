@@ -12,21 +12,30 @@ import Foundation
 
 protocol EventsListInteractorDependenciesProtocol {
   var dataSource: EventsListInteractorDataSourceProtocol { get }
+  var eventsListRepository: EventsListRepositoryProtocol { get }
 }
 
 final class EventsListInteractor {
+
+  // MARK: - Constants
+
+  private enum Constants {
+    static let numberOfCategories = 1
+  }
 
   // MARK: - Property
 
   weak var output: EventsListInteractorOutput?
 
   private var dataSource: EventsListInteractorDataSourceProtocol
+  private var eventsListRepository: EventsListRepositoryProtocol
   private let mainQueue = DispatchQueue.main
   
   // MARK: - Lifecycle
 
   init(dependencies: EventsListInteractorDependenciesProtocol) {
     dataSource = dependencies.dataSource
+    eventsListRepository = dependencies.eventsListRepository
   }
 
   deinit {}
@@ -55,11 +64,11 @@ extension EventsListInteractor: EventsListInteractorInput {
   }
 
   func numberOfCategories() -> Int {
-    return 1
+    return Constants.numberOfCategories
   }
 
   func numberOfItems(for categoryIndex: Int) -> Int {
-    return 1
+    return dataSource.events.count
   }
 
   func item(atIndex index: Int, for categoryIndex: Int) -> EventsListItemProtocol? {

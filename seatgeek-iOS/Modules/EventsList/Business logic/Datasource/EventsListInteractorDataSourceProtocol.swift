@@ -10,8 +10,6 @@
 
 import Foundation
 
-protocol EventsListInteractorDataSourceItemProtocol {
-  var identifier: String { get }
+protocol EventsListInteractorDataSourceProtocol {
+  var events: [EventNetworkItemProtocol] { get set }
 }
-
-protocol EventsListInteractorDataSourceProtocol {}

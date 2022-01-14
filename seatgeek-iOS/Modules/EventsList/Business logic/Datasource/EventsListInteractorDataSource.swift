@@ -10,4 +10,6 @@
 
 import Foundation
 
-final class EventsListInteractorDataSource: EventsListInteractorDataSourceProtocol {}
+final class EventsListInteractorDataSource: EventsListInteractorDataSourceProtocol {
+  var events: [EventNetworkItemProtocol] = []
+}
