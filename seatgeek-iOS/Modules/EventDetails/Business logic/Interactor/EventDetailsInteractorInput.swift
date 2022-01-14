@@ -10,19 +10,6 @@
 
 import Foundation
 
-public enum EventDetailsCategory {
-}
-
-extension EventDetailsCategory: Equatable {
-  public static func == (lhs: EventDetailsCategory,
-                         rhs: EventDetailsCategory) -> Bool {
-    switch (lhs, rhs) {
-    default:
-      return false
-    }
-  }
-}
-
 public protocol EventDetailsInteractorInput {
   func retrieve()
 }

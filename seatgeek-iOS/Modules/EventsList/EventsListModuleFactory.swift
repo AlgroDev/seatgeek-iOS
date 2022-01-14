@@ -53,6 +53,7 @@ extension EventsListModuleFactory: EventsListModuleFactoryProtocol {
     let storyboard = UIStoryboard(name: "EventsList", bundle: nil)
     guard let viewController = storyboard.instantiateViewController(withIdentifier: "EventsListTableViewController") as? EventsListTableViewController else { return UIViewController()}
     viewController.dependencies = self
+    viewController.imageLoader = DesignSystemImageDownloader()
     interactorFactory.output = presenter
     self.presenter = presenter
     presenter.output = viewController

@@ -143,6 +143,7 @@ extension EventsListInteractor: EventsListInteractorInput {
   func selectItem(atIndex index: Int, for categoryIndex: Int) {
     guard let selectedEvent = dataSource.events.safe[index] else { return }
     selectedEventRepository.save(selectedEvent)
+    output?.routeToEventsDetails()
   }
 }
 

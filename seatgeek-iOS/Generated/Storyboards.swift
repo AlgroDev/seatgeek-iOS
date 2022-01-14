@@ -15,7 +15,7 @@ internal enum StoryboardScene {
   internal enum EventDetails: StoryboardType {
     internal static let storyboardName = "EventDetails"
 
-    internal static let initialScene = InitialSceneType<seatgeek_iOS.EventDetailsViewController>(storyboard: EventDetails.self)
+    internal static let initialScene = InitialSceneType<UIKit.UINavigationController>(storyboard: EventDetails.self)
 
     internal static let eventDetailsViewController = SceneType<seatgeek_iOS.EventDetailsViewController>(storyboard: EventDetails.self, identifier: "EventDetailsViewController")
   }

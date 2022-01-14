@@ -11,9 +11,20 @@
 import Foundation
 
 public protocol EventDetailsInteractorOutput: AnyObject {
-    func setDefaultValues()
-    func notifyLoading()
-    func notifyNoDataError()
-    func notifyNetworkError()
-    func notifyServerError()
+  func setDefaultValues()
+  func notifyLoading()
+  func notifyNoDataError()
+  func notifyNetworkError()
+  func notifyServerError()
+  func display(_ item: EventDetailsItemProtocol)
+}
+
+public protocol EventDetailsItemProtocol {
+  var title: String { get }
+  var datetimeLocal: String { get }
+  var type: String { get }
+  var name: String { get }
+  var city: String { get }
+  var country: String { get }
+  var image: String { get }
 }

@@ -14,6 +14,10 @@ protocol EventsListViewDependenciesProtocol {
 
 class EventsListTableViewController: UITableViewController, Loadable {
 
+  // MARK: - Outlets
+  @IBOutlet weak var searchBar: UISearchBar!
+
+
   // MARK: - Constants
 
   private enum Constants {
@@ -22,8 +26,9 @@ class EventsListTableViewController: UITableViewController, Loadable {
 
   // MARK: - Property
 
-  var viewsToHideDuringLoading: [UIView] { view.subviews }
+  var viewsToHideDuringLoading: [UIView] { [searchBar] }
   var activityIndicator: UIActivityIndicatorView?
+  var imageLoader: ImageDownloader!
   var dependencies: EventsListViewDependenciesProtocol!
 
   // MARK: - LifeCycle
@@ -31,6 +36,7 @@ class EventsListTableViewController: UITableViewController, Loadable {
   override func viewDidLoad() {
     super.viewDidLoad()
     tableView.register(EventTableViewCell.nib, forCellReuseIdentifier: Constants.eventTableViewCell)
+    searchBar.delegate = self
     self.dependencies.presenter?.viewDidLoad()
   }
 
@@ -53,6 +59,8 @@ class EventsListTableViewController: UITableViewController, Loadable {
 
     cell.titleLabel.attributedText = viewItem?.title
     cell.dateLabel.attributedText = viewItem?.datetimeLocal
+    cell.addressLabel.attributedText = viewItem?.city
+    imageLoader.loadImage(imageView: cell.eventImageView, url: viewItem?.image, placeholder: UIImage(), animated: true)
 
     return cell
   }
@@ -64,10 +72,18 @@ class EventsListTableViewController: UITableViewController, Loadable {
   }
 }
 
+// MARK: - UISearchBarDelegate
+
+extension EventsListTableViewController: UISearchBarDelegate {
+  func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+
+  }
+}
 // MARK: - EventsListPresenterOutput
 
 extension EventsListTableViewController: EventsListPresenterOutput {
   func reloadData() {
+    hideLoading()
     tableView.reloadData()
   }
 

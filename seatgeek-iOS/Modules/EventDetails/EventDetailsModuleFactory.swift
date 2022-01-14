@@ -47,9 +47,9 @@ extension EventDetailsModuleFactory: EventDetailsModuleFactoryProtocol {
     let presenterDependencies = EventDetailsPresenterDependencies(interactor: interactorModuleFactoryResponse.interactor, router: router)
     let presenter = EventDetailsPresenter(dependencies: presenterDependencies)
 
-
     let viewController = StoryboardScene.EventDetails.eventDetailsViewController.instantiate()
     viewController.dependencies = self
+    viewController.imageLoader = DesignSystemImageDownloader()
     interactorFactory.output = presenter
     self.presenter = presenter
     presenter.output = viewController

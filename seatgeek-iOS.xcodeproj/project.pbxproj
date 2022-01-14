@@ -14,6 +14,8 @@
 		D7D3839A2791313A00619C9A /* TypographyType.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D383992791313A00619C9A /* TypographyType.swift */; };
 		D7D3839C2791316600619C9A /* UIViewStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D3839B2791316600619C9A /* UIViewStyle.swift */; };
 		D7D3839E279131AA00619C9A /* NSMutableAttributedString+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D3839D279131AA00619C9A /* NSMutableAttributedString+Extensions.swift */; };
+		D7D383A127914FE200619C9A /* ImageDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D383A027914FE200619C9A /* ImageDownloader.swift */; };
+		D7D383A327914FF100619C9A /* DesignSystemImageDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D383A227914FF100619C9A /* DesignSystemImageDownloader.swift */; };
 		D7D71E08278FE60000A98AB7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D71E07278FE60000A98AB7 /* AppDelegate.swift */; };
 		D7D71E0A278FE60000A98AB7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D71E09278FE60000A98AB7 /* SceneDelegate.swift */; };
 		D7D71E0C278FE60000A98AB7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D71E0B278FE60000A98AB7 /* ViewController.swift */; };
@@ -76,6 +78,8 @@
 		D7D383992791313A00619C9A /* TypographyType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypographyType.swift; sourceTree = "<group>"; };
 		D7D3839B2791316600619C9A /* UIViewStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewStyle.swift; sourceTree = "<group>"; };
 		D7D3839D279131AA00619C9A /* NSMutableAttributedString+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSMutableAttributedString+Extensions.swift"; sourceTree = "<group>"; };
+		D7D383A027914FE200619C9A /* ImageDownloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDownloader.swift; sourceTree = "<group>"; };
+		D7D383A227914FF100619C9A /* DesignSystemImageDownloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignSystemImageDownloader.swift; sourceTree = "<group>"; };
 		D7D71E04278FE60000A98AB7 /* seatgeek-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "seatgeek-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D7D71E07278FE60000A98AB7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D7D71E09278FE60000A98AB7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -160,6 +164,43 @@
 				D7D38395279129FA00619C9A /* SelectedEventRepositoryProtocol.swift */,
 			);
 			path = SelectedEvent;
+			sourceTree = "<group>";
+		};
+		D7D3839F27914FD900619C9A /* ImageDownloader */ = {
+			isa = PBXGroup;
+			children = (
+				D7D383A027914FE200619C9A /* ImageDownloader.swift */,
+				D7D383A227914FF100619C9A /* DesignSystemImageDownloader.swift */,
+			);
+			path = ImageDownloader;
+			sourceTree = "<group>";
+		};
+		D7D383A42791542300619C9A /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				D7D71E68278FF38700A98AB7 /* EventDetailsRouter.swift */,
+				D7D71E75278FF38700A98AB7 /* EventDetailsRouterProtocol.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		D7D383A52791542D00619C9A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D7D71E64278FF38700A98AB7 /* EventDetails.storyboard */,
+				D7D71E6D278FF38700A98AB7 /* EventDetailsViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		D7D383A62791543700619C9A /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				D7D71E67278FF38700A98AB7 /* EventDetailsPresenter.swift */,
+				D7D71E6F278FF38700A98AB7 /* EventDetailsPresenterInput.swift */,
+				D7D71E72278FF38700A98AB7 /* EventDetailsPresenterOutput.swift */,
+			);
+			path = Presenter;
 			sourceTree = "<group>";
 		};
 		D7D71DFB278FE60000A98AB7 = {
@@ -258,6 +299,7 @@
 		D7D71E59278FEF3F00A98AB7 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				D7D3839F27914FD900619C9A /* ImageDownloader */,
 				D7D71E5E278FEFC700A98AB7 /* Extensions */,
 				D7D71E5A278FEF5E00A98AB7 /* Loadable.swift */,
 				D7D71E5C278FEF8B00A98AB7 /* Animation.swift */,
@@ -301,13 +343,9 @@
 		D7D71E8F278FF3A100A98AB7 /* User interface */ = {
 			isa = PBXGroup;
 			children = (
-				D7D71E64278FF38700A98AB7 /* EventDetails.storyboard */,
-				D7D71E67278FF38700A98AB7 /* EventDetailsPresenter.swift */,
-				D7D71E68278FF38700A98AB7 /* EventDetailsRouter.swift */,
-				D7D71E6D278FF38700A98AB7 /* EventDetailsViewController.swift */,
-				D7D71E6F278FF38700A98AB7 /* EventDetailsPresenterInput.swift */,
-				D7D71E72278FF38700A98AB7 /* EventDetailsPresenterOutput.swift */,
-				D7D71E75278FF38700A98AB7 /* EventDetailsRouterProtocol.swift */,
+				D7D383A62791543700619C9A /* Presenter */,
+				D7D383A52791542D00619C9A /* View */,
+				D7D383A42791542300619C9A /* Router */,
 			);
 			path = "User interface";
 			sourceTree = "<group>";
@@ -617,6 +655,7 @@
 				D7D38394279129E600619C9A /* SelectedEventRepository.swift in Sources */,
 				D7D38396279129FA00619C9A /* SelectedEventRepositoryProtocol.swift in Sources */,
 				D7D71E5B278FEF5E00A98AB7 /* Loadable.swift in Sources */,
+				D7D383A327914FF100619C9A /* DesignSystemImageDownloader.swift in Sources */,
 				D7D71E4C278FEEFC00A98AB7 /* EventsListInteractorModuleFactory.swift in Sources */,
 				D7D3839E279131AA00619C9A /* NSMutableAttributedString+Extensions.swift in Sources */,
 				D7D71E29278FEACC00A98AB7 /* Storyboards.swift in Sources */,
@@ -624,6 +663,7 @@
 				D7D71E0C278FE60000A98AB7 /* ViewController.swift in Sources */,
 				D7D71E82278FF38700A98AB7 /* EventDetailsInteractorModuleFactory.swift in Sources */,
 				D7D71E58278FEEFC00A98AB7 /* EventsListInteractorDataSource.swift in Sources */,
+				D7D383A127914FE200619C9A /* ImageDownloader.swift in Sources */,
 				D7D71E55278FEEFC00A98AB7 /* EventsListRouterProtocol.swift in Sources */,
 				D7D71E88278FF38700A98AB7 /* EventDetailsPresenterOutput.swift in Sources */,
 				D7D71E7C278FF38700A98AB7 /* EventDetailsInteractorOutput.swift in Sources */,

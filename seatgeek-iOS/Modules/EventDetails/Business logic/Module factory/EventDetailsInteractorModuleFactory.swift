@@ -29,7 +29,8 @@ public final class EventDetailsInteractorModuleFactory: EventDetailsInteractorMo
   // MARK: - EventDetailsInteractorInput
 
   public func makeResponse(from request: EventDetailsInteractorModuleFactoryRequestProtocol) -> EventDetailsInteractorModuleFactoryResponseProtocol {
-    let dependencies = EventDetailsInteractorDependencies(dataSource: EventDetailsInteractorDataSource())
+    let dependencies = EventDetailsInteractorDependencies(dataSource: EventDetailsInteractorDataSource(),
+                                                          selectedEventRepository: SelectedEventRepository.shared)
     let interactor = EventDetailsInteractor(dependencies: dependencies)
     self.interactor = interactor
     let response = EventDetailsInteractorModuleFactoryResponse(interactor: interactor)
@@ -47,4 +48,5 @@ private struct EventDetailsInteractorModuleFactoryResponse: EventDetailsInteract
 
 private struct EventDetailsInteractorDependencies: EventDetailsInteractorDependenciesProtocol {
   let dataSource: EventDetailsInteractorDataSourceProtocol
+  let selectedEventRepository: SelectedEventRepositoryProtocol
 }

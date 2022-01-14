@@ -78,7 +78,7 @@ extension EventsListPresenter: EventsListPresenterInput {
   }
 
   func selectItem(at indexPath: IndexPath) {
-    interactor.selectItem(atIndex: indexPath.section, for: indexPath.row)
+    interactor.selectItem(atIndex: indexPath.row, for: indexPath.section)
   }
 }
 
