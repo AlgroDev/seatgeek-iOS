@@ -11,5 +11,5 @@
 import Foundation
 
 protocol EventsListInteractorDataSourceProtocol {
-  var events: [EventNetworkItemProtocol] { get set }
+  var events: [EventsListRepositoryResponseProtocol] { get set }
 }

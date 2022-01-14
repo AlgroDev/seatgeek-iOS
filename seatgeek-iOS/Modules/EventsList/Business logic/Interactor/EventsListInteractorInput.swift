@@ -20,9 +20,10 @@ public protocol EventsListInteractorInput {
 
 public protocol EventsListItemProtocol {
   var title: String { get }
-  var poster: String { get }
-  var overview: String { get }
-  var releaseDate: String { get }
-  var voteAverage: Float? { get }
-  var voteCount: Int? { get }
+  var datetimeLocal: String { get }
+  var type: String { get }
+  var name: String { get }
+  var city: String { get }
+  var country: String { get }
+  var image: String { get }
 }

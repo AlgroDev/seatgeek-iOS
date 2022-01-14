@@ -31,7 +31,8 @@ public final class EventsListInteractorModuleFactory: EventsListInteractorModule
   public func makeResponse(from request: EventsListInteractorModuleFactoryRequestProtocol) -> EventsListInteractorModuleFactoryResponseProtocol {
     let adapter = EventsListAdapter(api: NetworkAPI())
     let dependencies = EventsListInteractorDependencies(dataSource: EventsListInteractorDataSource(),
-                                                        eventsListRepository: EventsListRepository(adapter: adapter))
+                                                        eventsListRepository: EventsListRepository(adapter: adapter),
+                                                        selectedEventRepository: SelectedEventRepository.shared)
     let interactor = EventsListInteractor(dependencies: dependencies)
     self.interactor = interactor
     let response = EventsListInteractorModuleFactoryResponse(interactor: interactor)
@@ -50,4 +51,5 @@ private struct EventsListInteractorModuleFactoryResponse: EventsListInteractorMo
 private struct EventsListInteractorDependencies: EventsListInteractorDependenciesProtocol {
   let dataSource: EventsListInteractorDataSourceProtocol
   let eventsListRepository: EventsListRepositoryProtocol
+  let selectedEventRepository: SelectedEventRepositoryProtocol
 }

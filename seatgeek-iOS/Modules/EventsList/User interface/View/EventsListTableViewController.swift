@@ -14,7 +14,11 @@ protocol EventsListViewDependenciesProtocol {
 
 class EventsListTableViewController: UITableViewController, Loadable {
 
-  // MARK: - Outlet
+  // MARK: - Constants
+
+  private enum Constants {
+    static let eventTableViewCell = "EventTableViewCell"
+  }
 
   // MARK: - Property
 
@@ -26,7 +30,37 @@ class EventsListTableViewController: UITableViewController, Loadable {
 
   override func viewDidLoad() {
     super.viewDidLoad()
+    tableView.register(EventTableViewCell.nib, forCellReuseIdentifier: Constants.eventTableViewCell)
     self.dependencies.presenter?.viewDidLoad()
+  }
+
+
+  // MARK: - UITableViewDatasource
+
+  override func numberOfSections(in tableView: UITableView) -> Int {
+    dependencies.presenter.numberOfSections()
+  }
+
+  override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    dependencies.presenter.numberOfRows(at: section)
+  }
+
+  override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    let viewItem = dependencies.presenter.viewItem(at: indexPath)
+
+    guard let cell = tableView.dequeueReusableCell(withIdentifier: Constants.eventTableViewCell) as?  EventTableViewCell
+    else { return UITableViewCell() }
+
+    cell.titleLabel.attributedText = viewItem?.title
+    cell.dateLabel.attributedText = viewItem?.datetimeLocal
+
+    return cell
+  }
+
+  // MARK: - UITableViewDelegate
+
+  override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    dependencies.presenter.selectItem(at: indexPath)
   }
 }
 
@@ -34,7 +68,7 @@ class EventsListTableViewController: UITableViewController, Loadable {
 
 extension EventsListTableViewController: EventsListPresenterOutput {
   func reloadData() {
-
+    tableView.reloadData()
   }
 
   func showErrorMessage(_ title: NSAttributedString, message: NSAttributedString) {

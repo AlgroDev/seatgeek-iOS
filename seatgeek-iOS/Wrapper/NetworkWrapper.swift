@@ -112,7 +112,6 @@ private extension URLSession {
 
     let task: URLSessionDataTask = session.dataTask(with: request,
                                                     completionHandler: completionHandler)
-
     task.resume()
   }
 }

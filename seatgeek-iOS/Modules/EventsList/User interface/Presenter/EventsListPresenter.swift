@@ -13,7 +13,22 @@ protocol EventsListPresenterDependenciesProtocol {
   var router: EventsListRouterProtocol { get }
 }
 
-final class EventsListPresenter {
+final class EventsListPresenter: AttributedStringConvertible {
+
+  // MARK: - Constants
+
+  private enum Constants {
+    static let title = ""
+
+    enum Style {
+      static let title: Styles = (.errorDescription, .black)
+      static let datetimeLocal: Styles = (.errorDescription, .black)
+      static let type: Styles = (.errorDescription, .black)
+      static let name: Styles = (.errorDescription, .black)
+      static let city: Styles = (.errorDescription, .black)
+      static let country: Styles = (.errorDescription, .black)
+    }
+  }
 
   // MARK: - Properties
 
@@ -27,9 +42,6 @@ final class EventsListPresenter {
     interactor = dependencies.interactor
     router = dependencies.router
   }
-
-  // MARK: - Privates
-
 }
 
 // MARK: - EventsListPresenterInput
@@ -48,7 +60,21 @@ extension EventsListPresenter: EventsListPresenterInput {
   }
 
   func viewItem(at indexPath: IndexPath) -> EventsListViewItemProtocol? {
-    return nil
+    guard let viewItem = interactor.item(atIndex: indexPath.row, for: indexPath.section) else { return nil }
+    let title = convertText(viewItem.title, style: Constants.Style.title)
+    let datetimeLocal = convertText(viewItem.datetimeLocal, style: Constants.Style.datetimeLocal)
+    let type = convertText(viewItem.type, style: Constants.Style.type)
+    let name = convertText(viewItem.name, style: Constants.Style.name)
+    let city = convertText(viewItem.city, style: Constants.Style.city)
+    let country = convertText(viewItem.country, style: Constants.Style.country)
+    guard let image = URL(string: viewItem.image) else { return nil }
+    return EventsListViewItem(title: title,
+                              datetimeLocal: datetimeLocal,
+                              type: type,
+                              name: name,
+                              city: city,
+                              country: country,
+                              image: image)
   }
 
   func selectItem(at indexPath: IndexPath) {
@@ -60,6 +86,7 @@ extension EventsListPresenter: EventsListPresenterInput {
 
 extension EventsListPresenter: EventsListInteractorOutput {
   func setDefaultValues() {
+    output?.hideLoading()
   }
 
   func updateCategories() {
@@ -85,4 +112,16 @@ extension EventsListPresenter: EventsListInteractorOutput {
   func notifyServerError() {
     output?.hideLoading()
   }
+}
+
+// MARK: - EventsListViewItemProtocol
+
+private struct EventsListViewItem: EventsListViewItemProtocol {
+  var title: NSAttributedString?
+  var datetimeLocal: NSAttributedString?
+  var type: NSAttributedString?
+  var name: NSAttributedString?
+  var city: NSAttributedString?
+  var country: NSAttributedString?
+  var image: URL
 }

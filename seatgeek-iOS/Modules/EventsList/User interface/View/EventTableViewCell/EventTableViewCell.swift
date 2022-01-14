@@ -10,6 +10,13 @@ import UIKit
 
 class EventTableViewCell: UITableViewCell {
 
+  // MARK: - Outlets
+
+  @IBOutlet private(set) weak var eventImageView: UIImageView!
+  @IBOutlet private(set) weak var titleLabel: UILabel!
+  @IBOutlet private(set) weak var addressLabel: UILabel!
+  @IBOutlet private(set) weak var dateLabel: UILabel!
+
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

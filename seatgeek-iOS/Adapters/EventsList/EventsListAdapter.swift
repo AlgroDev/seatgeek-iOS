@@ -13,7 +13,7 @@ protocol EventNetworkItemProtocol {
   var title: String? { get }
   var datetimeLocal: String? { get }
   var type: String? { get }
-  var venue: [EventVenueItemProtocol] { get }
+  var venue: EventVenueItemProtocol? { get }
   var performers: [EventPerformersItemProtocol] { get }
 }
 
@@ -43,10 +43,10 @@ class EventsListAdapter {
   private enum Constants {
     static let baseURL = "https://api.seatgeek.com"
     static let version = "2"
-    static let path = "/events"
-    static let EventsURL = "\(baseURL)/\(version)/\(path)?\(apikeyString)=\(apiKey)"
+    static let path = "events"
+    static let eventsURL = "\(baseURL)/\(version)/\(path)?\(apikeyString)=\(apiKey)"
     static let apiKey = "MjUzMzEwOTV8MTY0MjA0NTk1OS4xMDc2NzE1"
-    static let apikeyString = "api_key"
+    static let apikeyString = "client_id"
   }
 
   // MARK: - Property
@@ -70,17 +70,6 @@ class EventsListAdapter {
     }
   }
 
-  private func convert(_ venues: [VenueCodableResponseItem]?) -> [EventVenueItemProtocol] {
-    var result: [EventVenueItemProtocol] = []
-    guard let venues = venues else { return result }
-    for venue in venues {
-      result.append(EventVenueItem(name: venue.name,
-                                   city: venue.city,
-                                   country: venue.country))
-    }
-    return result
-  }
-
   private func convert(_ performers: [PerformersCodableResponseItem]?) -> [EventPerformersItemProtocol] {
     var result: [EventPerformersItemProtocol] = []
     guard let performers = performers else { return result }
@@ -95,7 +84,7 @@ class EventsListAdapter {
 
 extension EventsListAdapter: EventsListAdapterProtocol {
   func retrieve(completion: @escaping (Result<[EventNetworkItemProtocol], EventsListAdapterError>) -> Void) {
-    api.request(urlString: Constants.EventsURL,
+    api.request(urlString: Constants.eventsURL,
                 method: .get,
                 parameters: [:],
                 success: { data in
@@ -107,7 +96,7 @@ extension EventsListAdapter: EventsListAdapterProtocol {
                                     title: event.title,
                                     datetimeLocal: event.datetimeLocal,
                                     type: event.type,
-                                    venue: self.convert(event.venue),
+                                    venue: EventVenueItem(name: event.venue?.name, city: event.venue?.city, country: event.venue?.country),
                                     performers: self.convert(event.performers))
           }
           DispatchQueue.main.async {
@@ -137,27 +126,27 @@ private struct EventsListAdapterCodableResponse: Codable {
 }
 
 private struct EventsListAdapterCodableResponseItem: Codable {
-  var id: Int?
-  var title: String?
-  var datetimeLocal: String?
   var type: String?
-  var venue: [VenueCodableResponseItem]?
+  var id: Int?
+  var datetimeLocal: String?
+  var venue: VenueCodableResponseItem?
   var performers: [PerformersCodableResponseItem]?
+  var title: String?
 
   enum CodingKeys: String, CodingKey {
-    case id
-    case title
-    case datetimeLocal = "datetime_local"
     case type
+    case id
+    case datetimeLocal = "datetime_local"
     case venue
     case performers
+    case title
   }
 }
 
 private struct VenueCodableResponseItem: Codable {
   var name: String?
-  var city: String?
   var country: String?
+  var city: String?
 }
 
 private struct PerformersCodableResponseItem: Codable {
@@ -171,7 +160,7 @@ private struct EventNetworkItem: EventNetworkItemProtocol {
   var title: String?
   var datetimeLocal: String?
   var type: String?
-  var venue: [EventVenueItemProtocol]
+  var venue: EventVenueItemProtocol?
   var performers: [EventPerformersItemProtocol]
 }
 

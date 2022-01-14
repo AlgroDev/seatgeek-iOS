@@ -17,10 +17,11 @@ protocol EventsListPresenterInput {
 }
 
 public protocol EventsListViewItemProtocol {
-  var title: NSAttributedString { get }
-  var poster: URL { get }
-  var overview: NSAttributedString { get }
-  var releaseDate: NSAttributedString { get }
-  var voteAverage: NSAttributedString? { get }
-  var voteCount: NSAttributedString? { get }
+  var title: NSAttributedString? { get }
+  var datetimeLocal: NSAttributedString? { get }
+  var type: NSAttributedString? { get }
+  var name: NSAttributedString? { get }
+  var city: NSAttributedString? { get }
+  var country: NSAttributedString? { get }
+  var image: URL { get }
 }

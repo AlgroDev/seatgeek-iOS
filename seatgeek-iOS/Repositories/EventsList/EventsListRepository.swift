@@ -8,22 +8,22 @@
 
 import Foundation
 
-protocol EventsListRepositoryResponseProtocol {
+public protocol EventsListRepositoryResponseProtocol {
   var id: Int? { get }
   var title: String? { get }
   var datetimeLocal: String? { get }
   var type: String? { get }
-  var venue: [EventVenueRepositoryItemProtocol] { get }
+  var venue: EventVenueRepositoryItemProtocol? { get }
   var performers: [EventPerformersRepositoryItemProtocol] { get }
 }
 
-protocol EventVenueRepositoryItemProtocol {
+public protocol EventVenueRepositoryItemProtocol {
   var name: String? { get }
   var city: String? { get }
   var country: String? { get }
 }
 
-protocol EventPerformersRepositoryItemProtocol {
+public protocol EventPerformersRepositoryItemProtocol {
   var image: String? { get }
 }
 
@@ -61,17 +61,6 @@ class EventsListRepository {
     }
   }
 
-  private func convert(_ venues: [EventVenueItemProtocol]?) -> [EventVenueRepositoryItemProtocol] {
-    var result: [EventVenueRepositoryItemProtocol] = []
-    guard let venues = venues else { return result }
-    for venue in venues {
-      result.append(EventVenueRepositoryItem(name: venue.name,
-                                             city: venue.city,
-                                             country: venue.country))
-    }
-    return result
-  }
-
   private func convert(_ performers: [EventPerformersItemProtocol]?) -> [EventPerformersRepositoryItemProtocol] {
     var result: [EventPerformersRepositoryItemProtocol] = []
     guard let performers = performers else { return result }
@@ -93,7 +82,7 @@ extension EventsListRepository: EventsListRepositoryProtocol {
                                               title: item.title,
                                               datetimeLocal: item.datetimeLocal,
                                               type: item.type,
-                                              venue: self.convert(item.venue),
+                                              venue: EventVenueRepositoryItem(name: item.venue?.name, city: item.venue?.city, country: item.venue?.country),
                                               performers: self.convert(item.performers))
         }
         completion(.success(response))
@@ -107,18 +96,18 @@ extension EventsListRepository: EventsListRepositoryProtocol {
 
 // MARK: - EventsListRepositoryResponseProtocol
 
-private struct EventsListRepositoryResponse: EventsListRepositoryResponseProtocol {
+struct EventsListRepositoryResponse: EventsListRepositoryResponseProtocol {
   var id: Int?
   var title: String?
   var datetimeLocal: String?
   var type: String?
-  var venue: [EventVenueRepositoryItemProtocol]
+  var venue: EventVenueRepositoryItemProtocol?
   var performers: [EventPerformersRepositoryItemProtocol]
 }
 
 // MARK: - EventVenueRepositoryItemProtocol
 
-private struct EventVenueRepositoryItem: EventVenueRepositoryItemProtocol {
+struct EventVenueRepositoryItem: EventVenueRepositoryItemProtocol {
   var name: String?
   var city: String?
   var country: String?
@@ -126,6 +115,6 @@ private struct EventVenueRepositoryItem: EventVenueRepositoryItemProtocol {
 
 // MARK: - EventPerformersRepositoryItemProtocol
 
-private struct EventPerformersRepositoryItem: EventPerformersRepositoryItemProtocol {
+struct EventPerformersRepositoryItem: EventPerformersRepositoryItemProtocol {
   var image: String?
 }

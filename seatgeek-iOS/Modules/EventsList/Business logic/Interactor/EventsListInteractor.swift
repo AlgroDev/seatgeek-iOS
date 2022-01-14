@@ -9,10 +9,12 @@
 //
 
 import Foundation
+import UIKit
 
 protocol EventsListInteractorDependenciesProtocol {
   var dataSource: EventsListInteractorDataSourceProtocol { get }
   var eventsListRepository: EventsListRepositoryProtocol { get }
+  var selectedEventRepository: SelectedEventRepositoryProtocol { get }
 }
 
 final class EventsListInteractor {
@@ -29,6 +31,7 @@ final class EventsListInteractor {
 
   private var dataSource: EventsListInteractorDataSourceProtocol
   private var eventsListRepository: EventsListRepositoryProtocol
+  private var selectedEventRepository: SelectedEventRepositoryProtocol
   private let mainQueue = DispatchQueue.main
   
   // MARK: - Lifecycle
@@ -36,6 +39,7 @@ final class EventsListInteractor {
   init(dependencies: EventsListInteractorDependenciesProtocol) {
     dataSource = dependencies.dataSource
     eventsListRepository = dependencies.eventsListRepository
+    selectedEventRepository = dependencies.selectedEventRepository
   }
 
   deinit {}
@@ -53,6 +57,51 @@ final class EventsListInteractor {
       self?.output?.notifyServerError()
     }
   }
+
+  private func convert(_ response: [EventsListRepositoryResponseProtocol],
+                       completion: @escaping ([EventsListRepositoryResponseProtocol]) -> Void) {
+    let events = response.compactMap { event -> EventsListRepositoryResponseProtocol? in
+      guard let id = event.id,
+            let title = event.title,
+            let datetimeLocal = event.datetimeLocal,
+            let type = event.type else { return nil}
+
+      return EventsListRepositoryResponse(id: id,
+                                          title: title,
+                                          datetimeLocal: datetimeLocal,
+                                          type: type,
+                                          venue: event.venue,
+                                          performers: event.performers)
+    }
+    dataSource.events = events
+    completion(events)
+  }
+
+  private func manageEventsListRepositorySuccessResponse(_ response: [EventsListRepositoryResponseProtocol]) {
+    DispatchQueue.global().async {
+      self.convert(response, completion: { [weak self] events in
+        if events.isEmpty {
+          self?.mainQueue.async {
+            self?.notifyServerError()
+            return
+          }
+          return
+        }
+        self?.mainQueue.async {
+          self?.output?.updateCategories()
+        }
+      })
+    }
+  }
+
+  private func manageEventsListRepositoryFailureError(_ error: EventRepositoryError) {
+    DispatchQueue.global().async { [weak self] in
+      switch error {
+      case .noInternetConnection: self?.notifyNetworkError()
+      default: self?.notifyServerError()
+      }
+    }
+  }
 }
 
 // MARK: - EventsListInteractorInput
@@ -61,6 +110,14 @@ extension EventsListInteractor: EventsListInteractorInput {
   func retrieve() {
     output?.setDefaultValues()
     output?.notifyLoading()
+    eventsListRepository.retrieve { [weak self] result in
+      switch result {
+      case let .success(repositoryResponse):
+        self?.manageEventsListRepositorySuccessResponse(repositoryResponse)
+      case let .failure(error):
+        self?.manageEventsListRepositoryFailureError(error)
+      }
+    }
   }
 
   func numberOfCategories() -> Int {
@@ -72,10 +129,31 @@ extension EventsListInteractor: EventsListInteractorInput {
   }
 
   func item(atIndex index: Int, for categoryIndex: Int) -> EventsListItemProtocol? {
-    return nil
+    let item = dataSource.events.safe[index]
+
+    return EventsListItem(title: item?.title ?? "",
+                          datetimeLocal: item?.datetimeLocal ?? "",
+                          type: item?.type ?? "",
+                          name: item?.venue?.name ?? "",
+                          city: item?.venue?.city ?? "",
+                          country: item?.venue?.country ?? "",
+                          image: item?.performers.first?.image ?? "")
   }
 
   func selectItem(atIndex index: Int, for categoryIndex: Int) {
-
+    guard let selectedEvent = dataSource.events.safe[index] else { return }
+    selectedEventRepository.save(selectedEvent)
   }
+}
+
+// MARK: - EventsListItemProtocol
+
+private struct EventsListItem: EventsListItemProtocol {
+  var title: String
+  var datetimeLocal: String
+  var type: String
+  var name: String
+  var city: String
+  var country: String
+  var image: String
 }
