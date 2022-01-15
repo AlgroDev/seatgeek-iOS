@@ -14,6 +14,7 @@ import UIKit
 protocol EventsListInteractorDependenciesProtocol {
   var dataSource: EventsListInteractorDataSourceProtocol { get }
   var eventsListRepository: EventsListRepositoryProtocol { get }
+  var searchEventRepository: SearchEventRepositoryProtocol { get }
   var selectedEventRepository: SelectedEventRepositoryProtocol { get }
 }
 
@@ -23,6 +24,7 @@ final class EventsListInteractor {
 
   private enum Constants {
     static let numberOfCategories = 1
+    static let defaultMinChar = 3
   }
 
   // MARK: - Property
@@ -32,6 +34,7 @@ final class EventsListInteractor {
   private var dataSource: EventsListInteractorDataSourceProtocol
   private var eventsListRepository: EventsListRepositoryProtocol
   private var selectedEventRepository: SelectedEventRepositoryProtocol
+  private var searchEventRepository: SearchEventRepositoryProtocol
   private let mainQueue = DispatchQueue.main
   
   // MARK: - Lifecycle
@@ -40,6 +43,7 @@ final class EventsListInteractor {
     dataSource = dependencies.dataSource
     eventsListRepository = dependencies.eventsListRepository
     selectedEventRepository = dependencies.selectedEventRepository
+    searchEventRepository = dependencies.searchEventRepository
   }
 
   deinit {}
@@ -65,7 +69,6 @@ final class EventsListInteractor {
             let title = event.title,
             let datetimeLocal = event.datetimeLocal,
             let type = event.type else { return nil}
-
       return EventsListRepositoryResponse(id: id,
                                           title: title,
                                           datetimeLocal: datetimeLocal,
@@ -118,6 +121,14 @@ extension EventsListInteractor: EventsListInteractorInput {
         self?.manageEventsListRepositoryFailureError(error)
       }
     }
+  }
+
+  func search(event: String) {
+    if event.count < Constants.defaultMinChar {
+      return
+    }
+
+
   }
 
   func numberOfCategories() -> Int {

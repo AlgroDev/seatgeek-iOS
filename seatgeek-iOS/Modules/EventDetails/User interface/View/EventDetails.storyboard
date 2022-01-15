@@ -4,6 +4,7 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -50,11 +51,19 @@
                             <constraint firstItem="KRc-Ws-NFY" firstAttribute="trailing" secondItem="UGX-Tx-1AA" secondAttribute="trailing" constant="16" id="vnb-0S-Uy4"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="dKJ-gT-zrw"/>
+                    <navigationItem key="navigationItem" id="dKJ-gT-zrw">
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="notFavorite" id="Be0-P1-Yrd">
+                            <color key="tintColor" systemColor="systemRedColor"/>
+                            <connections>
+                                <action selector="favoriteBarItem:" destination="jZc-y3-T6H" id="5Ev-j5-mcg"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="addressLabel" destination="JJg-kT-4nH" id="49B-Bf-8ae"/>
                         <outlet property="dateLabel" destination="agJ-tz-reI" id="JH2-wU-kdV"/>
                         <outlet property="eventImageView" destination="UGX-Tx-1AA" id="ad4-KB-ehW"/>
+                        <outlet property="favoriteBarItem" destination="Be0-P1-Yrd" id="j7W-pz-kvI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DW0-KS-HDw" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -80,4 +89,10 @@
             <point key="canvasLocation" x="253.59999999999999" y="190.64039408866995"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="notFavorite" width="21.333333969116211" height="21.333333969116211"/>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
 </document>

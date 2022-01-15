@@ -73,7 +73,7 @@ class EventsListRepository {
 
 extension EventsListRepository: EventsListRepositoryProtocol {
   func retrieve(completion: @escaping (Result<[EventsListRepositoryResponseProtocol], EventRepositoryError>) -> Void) {
-    adapter.retrieve() { [weak self] result in
+    APIManager.shared.retrieve() { [weak self] result in
       guard let self = self else { return }
       switch result {
       case let .success(adapterResponse):

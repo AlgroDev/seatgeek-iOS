@@ -63,6 +63,7 @@ extension EventDetailsPresenter: EventDetailsInteractorOutput {
   }
 
   func display(_ item: EventDetailsItemProtocol) {
+    output?.hideLoading()
     guard let imageURL = URL(string: item.image) else { return }
     let title = convertText(item.title, style: Constants.Style.title)
     let datetimeLocal = convertText(item.datetimeLocal, style: Constants.Style.datetimeLocal)

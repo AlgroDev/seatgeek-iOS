@@ -16,6 +16,7 @@ public protocol EventsListInteractorInput {
   func numberOfItems(for categoryIndex: Int) -> Int
   func item(atIndex index: Int, for categoryIndex: Int) -> EventsListItemProtocol?
   func selectItem(atIndex index: Int, for categoryIndex: Int)
+  func search(event: String)
 }
 
 public protocol EventsListItemProtocol {

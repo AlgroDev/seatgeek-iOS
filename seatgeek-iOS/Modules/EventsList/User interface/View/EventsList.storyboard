@@ -1,36 +1,57 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="XkS-eJ-UYr">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="1Qf-n2-mAA">
     <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Events List Table View Controller-->
-        <scene sceneID="K5x-tm-0g8">
+        <!--Events List View Controller-->
+        <scene sceneID="fgM-0d-xJA">
             <objects>
-                <tableViewController storyboardIdentifier="EventsListTableViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="XkS-eJ-UYr" customClass="EventsListTableViewController" customModule="seatgeek_iOS" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="Sl6-5F-tUl">
+                <viewController storyboardIdentifier="EventsListViewController" id="1Qf-n2-mAA" customClass="EventsListViewController" customModule="seatgeek_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="6cG-VH-L7R">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <searchBar key="tableHeaderView" contentMode="redraw" text="" id="xvi-vQ-klC">
-                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                            <textInputTraits key="textInputTraits"/>
-                        </searchBar>
-                        <connections>
-                            <outlet property="dataSource" destination="XkS-eJ-UYr" id="cSe-xj-P0d"/>
-                            <outlet property="delegate" destination="XkS-eJ-UYr" id="gVB-VQ-uHj"/>
-                        </connections>
-                    </tableView>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="1f9-DF-6LG">
+                                <rect key="frame" x="0.0" y="44" width="375" height="768"/>
+                                <subviews>
+                                    <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="owQ-NI-f7J">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="51"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </searchBar>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="i8N-D7-iDF">
+                                        <rect key="frame" x="0.0" y="51" width="375" height="717"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    </tableView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="mF6-YM-5dk"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="1f9-DF-6LG" secondAttribute="bottom" id="bCQ-fe-z6v"/>
+                            <constraint firstItem="1f9-DF-6LG" firstAttribute="leading" secondItem="mF6-YM-5dk" secondAttribute="leading" id="g2n-eK-beK"/>
+                            <constraint firstItem="1f9-DF-6LG" firstAttribute="top" secondItem="mF6-YM-5dk" secondAttribute="top" id="yHZ-yd-i3N"/>
+                            <constraint firstItem="1f9-DF-6LG" firstAttribute="trailing" secondItem="mF6-YM-5dk" secondAttribute="trailing" id="zpY-gr-5Yb"/>
+                        </constraints>
+                    </view>
                     <connections>
-                        <outlet property="searchBar" destination="xvi-vQ-klC" id="72r-c3-d1z"/>
+                        <outlet property="searchBar" destination="owQ-NI-f7J" id="4sL-Mz-9ci"/>
+                        <outlet property="tableView" destination="i8N-D7-iDF" id="N8O-gp-Paw"/>
                     </connections>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="A4G-AR-j70" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KCz-Wj-qfa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-498.39999999999998" y="186.94581280788179"/>
+            <point key="canvasLocation" x="245.59999999999999" y="203.94088669950739"/>
         </scene>
     </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>

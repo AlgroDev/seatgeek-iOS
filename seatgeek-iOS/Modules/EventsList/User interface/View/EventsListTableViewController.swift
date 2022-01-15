@@ -12,10 +12,11 @@ protocol EventsListViewDependenciesProtocol {
   var presenter: EventsListPresenterInput! { get }
 }
 
-class EventsListTableViewController: UITableViewController, Loadable {
+class EventsListViewController: UIViewController, Loadable {
 
   // MARK: - Outlets
-  @IBOutlet weak var searchBar: UISearchBar!
+  @IBOutlet private(set) weak var searchBar: UISearchBar!
+  @IBOutlet private(set) weak var tableView: UITableView!
 
 
   // MARK: - Constants
@@ -26,7 +27,7 @@ class EventsListTableViewController: UITableViewController, Loadable {
 
   // MARK: - Property
 
-  var viewsToHideDuringLoading: [UIView] { [searchBar] }
+  var viewsToHideDuringLoading: [UIView] { [tableView, searchBar] }
   var activityIndicator: UIActivityIndicatorView?
   var imageLoader: ImageDownloader!
   var dependencies: EventsListViewDependenciesProtocol!
@@ -36,22 +37,25 @@ class EventsListTableViewController: UITableViewController, Loadable {
   override func viewDidLoad() {
     super.viewDidLoad()
     tableView.register(EventTableViewCell.nib, forCellReuseIdentifier: Constants.eventTableViewCell)
+    tableView.delegate = self
+    tableView.dataSource = self
     searchBar.delegate = self
     self.dependencies.presenter?.viewDidLoad()
   }
+}
 
+// MARK: - UITableViewDatasource
 
-  // MARK: - UITableViewDatasource
-
-  override func numberOfSections(in tableView: UITableView) -> Int {
+extension EventsListViewController: UITableViewDataSource {
+  func numberOfSections(in tableView: UITableView) -> Int {
     dependencies.presenter.numberOfSections()
   }
 
-  override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+  func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     dependencies.presenter.numberOfRows(at: section)
   }
 
-  override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+  func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let viewItem = dependencies.presenter.viewItem(at: indexPath)
 
     guard let cell = tableView.dequeueReusableCell(withIdentifier: Constants.eventTableViewCell) as?  EventTableViewCell
@@ -64,26 +68,27 @@ class EventsListTableViewController: UITableViewController, Loadable {
 
     return cell
   }
+}
 
-  // MARK: - UITableViewDelegate
+// MARK: - UITableViewDelegate
 
-  override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+extension EventsListViewController: UITableViewDelegate {
+  func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     dependencies.presenter.selectItem(at: indexPath)
   }
 }
 
 // MARK: - UISearchBarDelegate
 
-extension EventsListTableViewController: UISearchBarDelegate {
+extension EventsListViewController: UISearchBarDelegate {
   func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-
+    dependencies.presenter.didChangeText(input: searchText)
   }
 }
 // MARK: - EventsListPresenterOutput
 
-extension EventsListTableViewController: EventsListPresenterOutput {
+extension EventsListViewController: EventsListPresenterOutput {
   func reloadData() {
-    hideLoading()
     tableView.reloadData()
   }
 

@@ -60,6 +60,7 @@ extension EventsListPresenter: EventsListPresenterInput {
   }
 
   func viewItem(at indexPath: IndexPath) -> EventsListViewItemProtocol? {
+    output?.hideLoading()
     guard let viewItem = interactor.item(atIndex: indexPath.row, for: indexPath.section) else { return nil }
     let title = convertText(viewItem.title, style: Constants.Style.title)
     let datetimeLocal = convertText(viewItem.datetimeLocal, style: Constants.Style.datetimeLocal)
@@ -79,6 +80,10 @@ extension EventsListPresenter: EventsListPresenterInput {
 
   func selectItem(at indexPath: IndexPath) {
     interactor.selectItem(atIndex: indexPath.row, for: indexPath.section)
+  }
+
+  func didChangeText(input: String) {
+    interactor.search(event: input)
   }
 }
 

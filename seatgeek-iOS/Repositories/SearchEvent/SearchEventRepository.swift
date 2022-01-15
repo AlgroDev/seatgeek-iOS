@@ -1,0 +1,9 @@
+//
+//  SearchEventRepository.swift
+//  seatgeek-iOS
+//
+//  Created by Mohammed HIMOUD on 14/01/2022.
+//  Copyright ©2022 Mohammed HIMOUD. All rights reserved.
+//
+
+import Foundation

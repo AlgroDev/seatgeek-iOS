@@ -14,6 +14,7 @@ protocol EventsListPresenterInput {
   func numberOfRows(at section: Int) -> Int
   func viewItem(at indexPath: IndexPath) -> EventsListViewItemProtocol?
   func selectItem(at indexPath: IndexPath)
+  func didChangeText(input: String)
 }
 
 public protocol EventsListViewItemProtocol {

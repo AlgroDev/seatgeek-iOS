@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		22604E8C0C71FCBE98E52A60 /* Pods_seatgeek_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFB6A9424F5C2D7F6D15A522 /* Pods_seatgeek_iOS.framework */; };
+		D7D22A452792CD5600E0C8B2 /* APIRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D22A442792CD5600E0C8B2 /* APIRouter.swift */; };
+		D7D22A472792D7CF00E0C8B2 /* NetworkLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D22A462792D7CF00E0C8B2 /* NetworkLogger.swift */; };
+		D7D22A492792D99E00E0C8B2 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D22A482792D99E00E0C8B2 /* APIManager.swift */; };
+		D7D22A4D2792ED9D00E0C8B2 /* SearchEventAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D22A4C2792ED9D00E0C8B2 /* SearchEventAdapter.swift */; };
+		D7D22A4F2792EDBC00E0C8B2 /* SearchEventAdapterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D22A4E2792EDBC00E0C8B2 /* SearchEventAdapterProtocol.swift */; };
 		D7D38394279129E600619C9A /* SelectedEventRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D38393279129E600619C9A /* SelectedEventRepository.swift */; };
 		D7D38396279129FA00619C9A /* SelectedEventRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D38395279129FA00619C9A /* SelectedEventRepositoryProtocol.swift */; };
 		D7D383982791311600619C9A /* AttributedStringConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D383972791311600619C9A /* AttributedStringConvertible.swift */; };
@@ -16,6 +21,8 @@
 		D7D3839E279131AA00619C9A /* NSMutableAttributedString+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D3839D279131AA00619C9A /* NSMutableAttributedString+Extensions.swift */; };
 		D7D383A127914FE200619C9A /* ImageDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D383A027914FE200619C9A /* ImageDownloader.swift */; };
 		D7D383A327914FF100619C9A /* DesignSystemImageDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D383A227914FF100619C9A /* DesignSystemImageDownloader.swift */; };
+		D7D383A92791C83900619C9A /* SearchEventRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D383A82791C83900619C9A /* SearchEventRepository.swift */; };
+		D7D383AB2791C84800619C9A /* SearchEventRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D383AA2791C84800619C9A /* SearchEventRepositoryProtocol.swift */; };
 		D7D71E08278FE60000A98AB7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D71E07278FE60000A98AB7 /* AppDelegate.swift */; };
 		D7D71E0A278FE60000A98AB7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D71E09278FE60000A98AB7 /* SceneDelegate.swift */; };
 		D7D71E0C278FE60000A98AB7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D71E0B278FE60000A98AB7 /* ViewController.swift */; };
@@ -72,6 +79,11 @@
 /* Begin PBXFileReference section */
 		11D14E61CFA0BBC6291F811C /* Pods-seatgeek-iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-seatgeek-iOS.debug.xcconfig"; path = "Target Support Files/Pods-seatgeek-iOS/Pods-seatgeek-iOS.debug.xcconfig"; sourceTree = "<group>"; };
 		5B4909EB14AD96703E4DE4CE /* Pods-seatgeek-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-seatgeek-iOS.release.xcconfig"; path = "Target Support Files/Pods-seatgeek-iOS/Pods-seatgeek-iOS.release.xcconfig"; sourceTree = "<group>"; };
+		D7D22A442792CD5600E0C8B2 /* APIRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRouter.swift; sourceTree = "<group>"; };
+		D7D22A462792D7CF00E0C8B2 /* NetworkLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkLogger.swift; sourceTree = "<group>"; };
+		D7D22A482792D99E00E0C8B2 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
+		D7D22A4C2792ED9D00E0C8B2 /* SearchEventAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchEventAdapter.swift; sourceTree = "<group>"; };
+		D7D22A4E2792EDBC00E0C8B2 /* SearchEventAdapterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchEventAdapterProtocol.swift; sourceTree = "<group>"; };
 		D7D38393279129E600619C9A /* SelectedEventRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedEventRepository.swift; sourceTree = "<group>"; };
 		D7D38395279129FA00619C9A /* SelectedEventRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedEventRepositoryProtocol.swift; sourceTree = "<group>"; };
 		D7D383972791311600619C9A /* AttributedStringConvertible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttributedStringConvertible.swift; sourceTree = "<group>"; };
@@ -80,6 +92,8 @@
 		D7D3839D279131AA00619C9A /* NSMutableAttributedString+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSMutableAttributedString+Extensions.swift"; sourceTree = "<group>"; };
 		D7D383A027914FE200619C9A /* ImageDownloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDownloader.swift; sourceTree = "<group>"; };
 		D7D383A227914FF100619C9A /* DesignSystemImageDownloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignSystemImageDownloader.swift; sourceTree = "<group>"; };
+		D7D383A82791C83900619C9A /* SearchEventRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchEventRepository.swift; sourceTree = "<group>"; };
+		D7D383AA2791C84800619C9A /* SearchEventRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchEventRepositoryProtocol.swift; sourceTree = "<group>"; };
 		D7D71E04278FE60000A98AB7 /* seatgeek-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "seatgeek-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D7D71E07278FE60000A98AB7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D7D71E09278FE60000A98AB7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -157,6 +171,22 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		D7D22A4A2792DB3900E0C8B2 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		D7D22A4B2792ED7B00E0C8B2 /* SearchEvent */ = {
+			isa = PBXGroup;
+			children = (
+				D7D22A4C2792ED9D00E0C8B2 /* SearchEventAdapter.swift */,
+				D7D22A4E2792EDBC00E0C8B2 /* SearchEventAdapterProtocol.swift */,
+			);
+			path = SearchEvent;
+			sourceTree = "<group>";
+		};
 		D7D38392279129D300619C9A /* SelectedEvent */ = {
 			isa = PBXGroup;
 			children = (
@@ -201,6 +231,15 @@
 				D7D71E72278FF38700A98AB7 /* EventDetailsPresenterOutput.swift */,
 			);
 			path = Presenter;
+			sourceTree = "<group>";
+		};
+		D7D383A72791C81200619C9A /* SearchEvent */ = {
+			isa = PBXGroup;
+			children = (
+				D7D383A82791C83900619C9A /* SearchEventRepository.swift */,
+				D7D383AA2791C84800619C9A /* SearchEventRepositoryProtocol.swift */,
+			);
+			path = SearchEvent;
 			sourceTree = "<group>";
 		};
 		D7D71DFB278FE60000A98AB7 = {
@@ -420,8 +459,12 @@
 		D7D71E97278FFF8800A98AB7 /* Data Proxy */ = {
 			isa = PBXGroup;
 			children = (
+				D7D22A4A2792DB3900E0C8B2 /* Models */,
 				D7D71EAC2790920700A98AB7 /* Adapters */,
 				D7D71EAD2790921100A98AB7 /* Wrapper */,
+				D7D22A442792CD5600E0C8B2 /* APIRouter.swift */,
+				D7D22A462792D7CF00E0C8B2 /* NetworkLogger.swift */,
+				D7D22A482792D99E00E0C8B2 /* APIManager.swift */,
 			);
 			name = "Data Proxy";
 			sourceTree = "<group>";
@@ -438,6 +481,7 @@
 		D7D71E9D279008B600A98AB7 /* Repositories */ = {
 			isa = PBXGroup;
 			children = (
+				D7D383A72791C81200619C9A /* SearchEvent */,
 				D7D38392279129D300619C9A /* SelectedEvent */,
 				D7D71EAE2790925000A98AB7 /* EventsList */,
 			);
@@ -484,6 +528,7 @@
 		D7D71EAC2790920700A98AB7 /* Adapters */ = {
 			isa = PBXGroup;
 			children = (
+				D7D22A4B2792ED7B00E0C8B2 /* SearchEvent */,
 				D7D71E9E279008CA00A98AB7 /* EventsList */,
 			);
 			path = Adapters;
@@ -652,6 +697,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D7D22A472792D7CF00E0C8B2 /* NetworkLogger.swift in Sources */,
 				D7D38394279129E600619C9A /* SelectedEventRepository.swift in Sources */,
 				D7D38396279129FA00619C9A /* SelectedEventRepositoryProtocol.swift in Sources */,
 				D7D71E5B278FEF5E00A98AB7 /* Loadable.swift in Sources */,
@@ -665,6 +711,7 @@
 				D7D71E58278FEEFC00A98AB7 /* EventsListInteractorDataSource.swift in Sources */,
 				D7D383A127914FE200619C9A /* ImageDownloader.swift in Sources */,
 				D7D71E55278FEEFC00A98AB7 /* EventsListRouterProtocol.swift in Sources */,
+				D7D22A4D2792ED9D00E0C8B2 /* SearchEventAdapter.swift in Sources */,
 				D7D71E88278FF38700A98AB7 /* EventDetailsPresenterOutput.swift in Sources */,
 				D7D71E7C278FF38700A98AB7 /* EventDetailsInteractorOutput.swift in Sources */,
 				D7D383982791311600619C9A /* AttributedStringConvertible.swift in Sources */,
@@ -675,6 +722,7 @@
 				D7D71E60278FEFD800A98AB7 /* UIView+Extensions.swift in Sources */,
 				D7D71E8B278FF38700A98AB7 /* EventDetailsRouterProtocol.swift in Sources */,
 				D7D71EB02790925F00A98AB7 /* EventsListRepositoryResponseProtocol.swift in Sources */,
+				D7D383A92791C83900619C9A /* SearchEventRepository.swift in Sources */,
 				D7D71E7D278FF38700A98AB7 /* EventDetailsPresenter.swift in Sources */,
 				D7D3839C2791316600619C9A /* UIViewStyle.swift in Sources */,
 				D7D71E80278FF38700A98AB7 /* EventDetailsInteractorInput.swift in Sources */,
@@ -689,6 +737,7 @@
 				D7D71E08278FE60000A98AB7 /* AppDelegate.swift in Sources */,
 				D7D71E4D278FEEFC00A98AB7 /* EventsListTableViewController.swift in Sources */,
 				D7D71E8A278FF38700A98AB7 /* EventDetailsModuleFactory.swift in Sources */,
+				D7D22A492792D99E00E0C8B2 /* APIManager.swift in Sources */,
 				D7D71E7E278FF38700A98AB7 /* EventDetailsRouter.swift in Sources */,
 				D7D71E28278FEACC00A98AB7 /* GeneratedLocalizableStrings.swift in Sources */,
 				D7D71E52278FEEFC00A98AB7 /* EventsListPresenterOutput.swift in Sources */,
@@ -697,10 +746,13 @@
 				D7D71E5D278FEF8B00A98AB7 /* Animation.swift in Sources */,
 				D7D71E87278FF38700A98AB7 /* EventDetailsInteractor.swift in Sources */,
 				D7D71E9B2790080F00A98AB7 /* EventTableViewCell.swift in Sources */,
+				D7D383AB2791C84800619C9A /* SearchEventRepositoryProtocol.swift in Sources */,
 				D7D71E27278FEACC00A98AB7 /* GeneratedAssets.swift in Sources */,
 				D7D71E46278FEEFC00A98AB7 /* EventsListInteractorOutput.swift in Sources */,
 				D7D71E0A278FE60000A98AB7 /* SceneDelegate.swift in Sources */,
+				D7D22A4F2792EDBC00E0C8B2 /* SearchEventAdapterProtocol.swift in Sources */,
 				D7D71E53278FEEFC00A98AB7 /* EventsListInteractorModuleFactoryProtocol.swift in Sources */,
+				D7D22A452792CD5600E0C8B2 /* APIRouter.swift in Sources */,
 				D7D71E51278FEEFC00A98AB7 /* EventsListInteractor.swift in Sources */,
 				D7D71E85278FF38700A98AB7 /* EventDetailsPresenterInput.swift in Sources */,
 				D7D71E50278FEEFC00A98AB7 /* EventsListInteractorDataSourceProtocol.swift in Sources */,

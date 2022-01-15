@@ -22,9 +22,9 @@ internal enum StoryboardScene {
   internal enum EventsList: StoryboardType {
     internal static let storyboardName = "EventsList"
 
-    internal static let initialScene = InitialSceneType<seatgeek_iOS.EventsListTableViewController>(storyboard: EventsList.self)
+    internal static let initialScene = InitialSceneType<seatgeek_iOS.EventsListViewController>(storyboard: EventsList.self)
 
-    internal static let eventsListTableViewController = SceneType<seatgeek_iOS.EventsListTableViewController>(storyboard: EventsList.self, identifier: "EventsListTableViewController")
+    internal static let eventsListViewController = SceneType<seatgeek_iOS.EventsListViewController>(storyboard: EventsList.self, identifier: "EventsListViewController")
   }
   internal enum LaunchScreen: StoryboardType {
     internal static let storyboardName = "LaunchScreen"

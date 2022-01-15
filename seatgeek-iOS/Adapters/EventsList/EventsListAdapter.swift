@@ -121,11 +121,11 @@ extension EventsListAdapter: EventsListAdapterProtocol {
   }
 }
 
-private struct EventsListAdapterCodableResponse: Codable {
+public struct EventsListAdapterCodableResponse: Codable {
   let events: [EventsListAdapterCodableResponseItem]
 }
 
-private struct EventsListAdapterCodableResponseItem: Codable {
+public struct EventsListAdapterCodableResponseItem: Codable {
   var type: String?
   var id: Int?
   var datetimeLocal: String?
@@ -143,19 +143,19 @@ private struct EventsListAdapterCodableResponseItem: Codable {
   }
 }
 
-private struct VenueCodableResponseItem: Codable {
+public struct VenueCodableResponseItem: Codable {
   var name: String?
   var country: String?
   var city: String?
 }
 
-private struct PerformersCodableResponseItem: Codable {
+public struct PerformersCodableResponseItem: Codable {
   var image: String?
 }
 
 // MARK: - EventNetworkItemProtocol
 
-private struct EventNetworkItem: EventNetworkItemProtocol {
+public struct EventNetworkItem: EventNetworkItemProtocol {
   var id: Int?
   var title: String?
   var datetimeLocal: String?
@@ -166,7 +166,7 @@ private struct EventNetworkItem: EventNetworkItemProtocol {
 
 // MARK: - EventVenueItemProtocol
 
-private struct EventVenueItem: EventVenueItemProtocol {
+public struct EventVenueItem: EventVenueItemProtocol {
   var name: String?
   var city: String?
   var country: String?
@@ -174,6 +174,6 @@ private struct EventVenueItem: EventVenueItemProtocol {
 
 // MARK: - EventPerformersItemProtocol
 
-private struct EventPerformersItem: EventPerformersItemProtocol {
+public struct EventPerformersItem: EventPerformersItemProtocol {
   var image: String?
 }

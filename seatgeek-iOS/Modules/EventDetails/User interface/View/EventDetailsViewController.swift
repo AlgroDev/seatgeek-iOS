@@ -7,34 +7,42 @@
 //
 
 import UIKit
+import SwiftUI
 
 protocol EventDetailsViewDependenciesProtocol {
   var presenter: EventDetailsPresenterInput! { get }
 }
 
 class EventDetailsViewController: UIViewController, Loadable {
-
+  
   // MARK: - Outlet
-
+  
   @IBOutlet private(set) weak var dateLabel: UILabel!
   @IBOutlet private(set) weak var addressLabel: UILabel!
   @IBOutlet private(set) weak var eventImageView: UIImageView!
+  @IBOutlet private(set) weak var favoriteBarItem: UIBarButtonItem!
 
-
+  
   // MARK: - Property
-
+  
   var viewsToHideDuringLoading: [UIView] { view.subviews }
   var activityIndicator: UIActivityIndicatorView?
   var imageLoader: ImageDownloader!
   var dependencies: EventDetailsViewDependenciesProtocol!
-
+  
   // MARK: - LifeCycle
-
+  
   override func viewDidLoad() {
     super.viewDidLoad()
-//    navigationController?.navigationBar.prefersLargeTitles = true
-//    navigationItem.largeTitleDisplayMode = .always
     self.dependencies.presenter?.viewDidLoad()
+  }
+
+  @IBAction func favoriteBarItem(_ sender: Bool) {
+    if ((navigationItem.leftBarButtonItem?.isSelected) != nil) {
+      navigationItem.leftBarButtonItem?.image = Asset.favorite.image
+      return
+    }
+    navigationItem.leftBarButtonItem?.image = Asset.notFavorite.image
   }
 }
 
@@ -42,25 +50,23 @@ class EventDetailsViewController: UIViewController, Loadable {
 
 extension EventDetailsViewController: EventDetailsPresenterOutput {
   func show(_ viewItem: EventDetailsViewItemProtocol) {
-    hideLoading()
     imageLoader.loadImage(imageView: eventImageView, url: viewItem.image, placeholder: UIImage(), animated: true)
-//    title = viewItem.title?.string
     dateLabel.attributedText = viewItem.datetimeLocal
     addressLabel.attributedText = viewItem.city
-
+    
     let label = UILabel()
-        label.backgroundColor = .clear
-        label.numberOfLines = 2
-        label.textAlignment = .center
-        label.textColor = .white
-        label.text = viewItem.title?.string //"FIFA" + " \n " + "Europe 2018-2019"
-        self.navigationItem.titleView = label
+    label.backgroundColor = .clear
+    label.numberOfLines = 2
+    label.textAlignment = .center
+    label.textColor = .black
+    label.text = viewItem.title?.string //"FIFA" + " \n " + "Europe 2018-2019"
+    self.navigationItem.titleView = label
   }
-
+  
   func showLoading() {
     startLoading()
   }
-
+  
   func hideLoading() {
     stopLoading()
   }
