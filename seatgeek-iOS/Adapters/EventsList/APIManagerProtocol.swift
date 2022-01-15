@@ -8,6 +8,7 @@
 
 import Foundation
 
-protocol EventsListAdapterProtocol {
+protocol APIManagerProtocol {
   func retrieve(completion: @escaping (Result<[EventNetworkItemProtocol], EventsListAdapterError>) -> Void)
+  func retrieve(event: String, completion: @escaping (Result<[EventNetworkItemProtocol], EventsListAdapterError>) -> Void)
 }

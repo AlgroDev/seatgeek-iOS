@@ -9,5 +9,5 @@
 import Foundation
 
 protocol SearchEventRepositoryProtocol {
-  
+  func retrieve(event: String, completion: @escaping (Result<[EventsListRepositoryResponseProtocol], EventRepositoryError>) -> Void)
 }

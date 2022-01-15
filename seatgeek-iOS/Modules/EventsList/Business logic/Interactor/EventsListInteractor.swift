@@ -35,6 +35,7 @@ final class EventsListInteractor {
   private var eventsListRepository: EventsListRepositoryProtocol
   private var selectedEventRepository: SelectedEventRepositoryProtocol
   private var searchEventRepository: SearchEventRepositoryProtocol
+  private var isSearchingEvent: Bool = false
   private let mainQueue = DispatchQueue.main
   
   // MARK: - Lifecycle
@@ -76,7 +77,12 @@ final class EventsListInteractor {
                                           venue: event.venue,
                                           performers: event.performers)
     }
-    dataSource.events = events
+    if isSearchingEvent {
+      dataSource.searchEvents = events
+    } else {
+      dataSource.events = events
+    }
+    dataSource.curents = events
     completion(events)
   }
 
@@ -105,6 +111,33 @@ final class EventsListInteractor {
       }
     }
   }
+
+  private func manageSearchEventsListRepositorySuccessResponse(_ response: [EventsListRepositoryResponseProtocol]) {
+    DispatchQueue.global().async {
+      self.convert(response, completion: { [weak self] events in
+        if events.isEmpty {
+          self?.mainQueue.async {
+            #warning("SHOULD add view with empty events")
+            self?.notifyServerError()
+            return
+          }
+          return
+        }
+        self?.mainQueue.async {
+          self?.output?.updateCategories()
+        }
+      })
+    }
+  }
+
+  private func manageSearchEventsListRepositoryFailureError(_ error: EventRepositoryError) {
+    DispatchQueue.global().async { [weak self] in
+      switch error {
+      case .noInternetConnection: self?.notifyNetworkError()
+      default: self?.notifyServerError()
+      }
+    }
+  }
 }
 
 // MARK: - EventsListInteractorInput
@@ -116,6 +149,7 @@ extension EventsListInteractor: EventsListInteractorInput {
     eventsListRepository.retrieve { [weak self] result in
       switch result {
       case let .success(repositoryResponse):
+        self?.isSearchingEvent = false
         self?.manageEventsListRepositorySuccessResponse(repositoryResponse)
       case let .failure(error):
         self?.manageEventsListRepositoryFailureError(error)
@@ -127,8 +161,20 @@ extension EventsListInteractor: EventsListInteractorInput {
     if event.count < Constants.defaultMinChar {
       return
     }
+    searchEventRepository.retrieve(event: event) { [weak self] result in
+      switch result {
+      case let .success(repositoryResponse):
+        self?.isSearchingEvent = true
+        self?.manageSearchEventsListRepositorySuccessResponse(repositoryResponse)
+      case let .failure(error):
+        self?.manageSearchEventsListRepositoryFailureError(error)
+      }
+    }
+  }
 
-
+  func cancelSearch() {
+    dataSource.curents = dataSource.events
+    output?.updateCategories()
   }
 
   func numberOfCategories() -> Int {
@@ -136,11 +182,11 @@ extension EventsListInteractor: EventsListInteractorInput {
   }
 
   func numberOfItems(for categoryIndex: Int) -> Int {
-    return dataSource.events.count
+    return dataSource.curents.count
   }
 
   func item(atIndex index: Int, for categoryIndex: Int) -> EventsListItemProtocol? {
-    let item = dataSource.events.safe[index]
+    let item = dataSource.curents.safe[index]
 
     return EventsListItem(title: item?.title ?? "",
                           datetimeLocal: item?.datetimeLocal ?? "",
@@ -152,7 +198,7 @@ extension EventsListInteractor: EventsListInteractorInput {
   }
 
   func selectItem(atIndex index: Int, for categoryIndex: Int) {
-    guard let selectedEvent = dataSource.events.safe[index] else { return }
+    guard let selectedEvent = dataSource.curents.safe[index] else { return }
     selectedEventRepository.save(selectedEvent)
     output?.routeToEventsDetails()
   }

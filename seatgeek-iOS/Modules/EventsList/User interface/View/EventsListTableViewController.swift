@@ -82,7 +82,18 @@ extension EventsListViewController: UITableViewDelegate {
 
 extension EventsListViewController: UISearchBarDelegate {
   func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-    dependencies.presenter.didChangeText(input: searchText)
+    guard let text = searchBar.text else { return }
+    dependencies.presenter.didChangeText(input: text)
+  }
+
+  func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+    searchBar.text = nil
+    searchBar.resignFirstResponder()
+    dependencies.presenter.searchBarCancelButtonClicked()
+  }
+
+  func searchBarResultsListButtonClicked(_ searchBar: UISearchBar) {
+
   }
 }
 // MARK: - EventsListPresenterOutput

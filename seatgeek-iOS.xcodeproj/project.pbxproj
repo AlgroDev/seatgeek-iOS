@@ -11,8 +11,6 @@
 		D7D22A452792CD5600E0C8B2 /* APIRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D22A442792CD5600E0C8B2 /* APIRouter.swift */; };
 		D7D22A472792D7CF00E0C8B2 /* NetworkLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D22A462792D7CF00E0C8B2 /* NetworkLogger.swift */; };
 		D7D22A492792D99E00E0C8B2 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D22A482792D99E00E0C8B2 /* APIManager.swift */; };
-		D7D22A4D2792ED9D00E0C8B2 /* SearchEventAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D22A4C2792ED9D00E0C8B2 /* SearchEventAdapter.swift */; };
-		D7D22A4F2792EDBC00E0C8B2 /* SearchEventAdapterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D22A4E2792EDBC00E0C8B2 /* SearchEventAdapterProtocol.swift */; };
 		D7D38394279129E600619C9A /* SelectedEventRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D38393279129E600619C9A /* SelectedEventRepository.swift */; };
 		D7D38396279129FA00619C9A /* SelectedEventRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D38395279129FA00619C9A /* SelectedEventRepositoryProtocol.swift */; };
 		D7D383982791311600619C9A /* AttributedStringConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D383972791311600619C9A /* AttributedStringConvertible.swift */; };
@@ -70,7 +68,7 @@
 		D7D71E9C2790080F00A98AB7 /* EventTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7D71E9A2790080F00A98AB7 /* EventTableViewCell.xib */; };
 		D7D71EA0279009B600A98AB7 /* EventsListAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D71E9F279009B600A98AB7 /* EventsListAdapter.swift */; };
 		D7D71EA2279009E200A98AB7 /* NetworkWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D71EA1279009E200A98AB7 /* NetworkWrapper.swift */; };
-		D7D71EA6279051DE00A98AB7 /* EventsListAdapterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D71EA5279051DE00A98AB7 /* EventsListAdapterProtocol.swift */; };
+		D7D71EA6279051DE00A98AB7 /* APIManagerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D71EA5279051DE00A98AB7 /* APIManagerProtocol.swift */; };
 		D7D71EA827906B4800A98AB7 /* Collection+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D71EA727906B4800A98AB7 /* Collection+Extensions.swift */; };
 		D7D71EB02790925F00A98AB7 /* EventsListRepositoryResponseProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D71EAF2790925F00A98AB7 /* EventsListRepositoryResponseProtocol.swift */; };
 		D7D71EB22790926B00A98AB7 /* EventsListRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D71EB12790926B00A98AB7 /* EventsListRepository.swift */; };
@@ -82,8 +80,6 @@
 		D7D22A442792CD5600E0C8B2 /* APIRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRouter.swift; sourceTree = "<group>"; };
 		D7D22A462792D7CF00E0C8B2 /* NetworkLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkLogger.swift; sourceTree = "<group>"; };
 		D7D22A482792D99E00E0C8B2 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
-		D7D22A4C2792ED9D00E0C8B2 /* SearchEventAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchEventAdapter.swift; sourceTree = "<group>"; };
-		D7D22A4E2792EDBC00E0C8B2 /* SearchEventAdapterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchEventAdapterProtocol.swift; sourceTree = "<group>"; };
 		D7D38393279129E600619C9A /* SelectedEventRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedEventRepository.swift; sourceTree = "<group>"; };
 		D7D38395279129FA00619C9A /* SelectedEventRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedEventRepositoryProtocol.swift; sourceTree = "<group>"; };
 		D7D383972791311600619C9A /* AttributedStringConvertible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttributedStringConvertible.swift; sourceTree = "<group>"; };
@@ -143,7 +139,7 @@
 		D7D71E9A2790080F00A98AB7 /* EventTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EventTableViewCell.xib; sourceTree = "<group>"; };
 		D7D71E9F279009B600A98AB7 /* EventsListAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsListAdapter.swift; sourceTree = "<group>"; };
 		D7D71EA1279009E200A98AB7 /* NetworkWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkWrapper.swift; sourceTree = "<group>"; };
-		D7D71EA5279051DE00A98AB7 /* EventsListAdapterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsListAdapterProtocol.swift; sourceTree = "<group>"; };
+		D7D71EA5279051DE00A98AB7 /* APIManagerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManagerProtocol.swift; sourceTree = "<group>"; };
 		D7D71EA727906B4800A98AB7 /* Collection+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Collection+Extensions.swift"; sourceTree = "<group>"; };
 		D7D71EAF2790925F00A98AB7 /* EventsListRepositoryResponseProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsListRepositoryResponseProtocol.swift; sourceTree = "<group>"; };
 		D7D71EB12790926B00A98AB7 /* EventsListRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsListRepository.swift; sourceTree = "<group>"; };
@@ -176,15 +172,6 @@
 			children = (
 			);
 			path = Models;
-			sourceTree = "<group>";
-		};
-		D7D22A4B2792ED7B00E0C8B2 /* SearchEvent */ = {
-			isa = PBXGroup;
-			children = (
-				D7D22A4C2792ED9D00E0C8B2 /* SearchEventAdapter.swift */,
-				D7D22A4E2792EDBC00E0C8B2 /* SearchEventAdapterProtocol.swift */,
-			);
-			path = SearchEvent;
 			sourceTree = "<group>";
 		};
 		D7D38392279129D300619C9A /* SelectedEvent */ = {
@@ -492,7 +479,7 @@
 			isa = PBXGroup;
 			children = (
 				D7D71E9F279009B600A98AB7 /* EventsListAdapter.swift */,
-				D7D71EA5279051DE00A98AB7 /* EventsListAdapterProtocol.swift */,
+				D7D71EA5279051DE00A98AB7 /* APIManagerProtocol.swift */,
 			);
 			path = EventsList;
 			sourceTree = "<group>";
@@ -528,7 +515,6 @@
 		D7D71EAC2790920700A98AB7 /* Adapters */ = {
 			isa = PBXGroup;
 			children = (
-				D7D22A4B2792ED7B00E0C8B2 /* SearchEvent */,
 				D7D71E9E279008CA00A98AB7 /* EventsList */,
 			);
 			path = Adapters;
@@ -711,12 +697,11 @@
 				D7D71E58278FEEFC00A98AB7 /* EventsListInteractorDataSource.swift in Sources */,
 				D7D383A127914FE200619C9A /* ImageDownloader.swift in Sources */,
 				D7D71E55278FEEFC00A98AB7 /* EventsListRouterProtocol.swift in Sources */,
-				D7D22A4D2792ED9D00E0C8B2 /* SearchEventAdapter.swift in Sources */,
 				D7D71E88278FF38700A98AB7 /* EventDetailsPresenterOutput.swift in Sources */,
 				D7D71E7C278FF38700A98AB7 /* EventDetailsInteractorOutput.swift in Sources */,
 				D7D383982791311600619C9A /* AttributedStringConvertible.swift in Sources */,
 				D7D71EB22790926B00A98AB7 /* EventsListRepository.swift in Sources */,
-				D7D71EA6279051DE00A98AB7 /* EventsListAdapterProtocol.swift in Sources */,
+				D7D71EA6279051DE00A98AB7 /* APIManagerProtocol.swift in Sources */,
 				D7D71E83278FF38700A98AB7 /* EventDetailsViewController.swift in Sources */,
 				D7D71E48278FEEFC00A98AB7 /* EventsListRouter.swift in Sources */,
 				D7D71E60278FEFD800A98AB7 /* UIView+Extensions.swift in Sources */,
@@ -750,7 +735,6 @@
 				D7D71E27278FEACC00A98AB7 /* GeneratedAssets.swift in Sources */,
 				D7D71E46278FEEFC00A98AB7 /* EventsListInteractorOutput.swift in Sources */,
 				D7D71E0A278FE60000A98AB7 /* SceneDelegate.swift in Sources */,
-				D7D22A4F2792EDBC00E0C8B2 /* SearchEventAdapterProtocol.swift in Sources */,
 				D7D71E53278FEEFC00A98AB7 /* EventsListInteractorModuleFactoryProtocol.swift in Sources */,
 				D7D22A452792CD5600E0C8B2 /* APIRouter.swift in Sources */,
 				D7D71E51278FEEFC00A98AB7 /* EventsListInteractor.swift in Sources */,

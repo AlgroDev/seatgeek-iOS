@@ -11,5 +11,7 @@
 import Foundation
 
 final class EventsListInteractorDataSource: EventsListInteractorDataSourceProtocol {
+  var curents: [EventsListRepositoryResponseProtocol] = []
   var events: [EventsListRepositoryResponseProtocol] = []
+  var searchEvents: [EventsListRepositoryResponseProtocol] = []
 }

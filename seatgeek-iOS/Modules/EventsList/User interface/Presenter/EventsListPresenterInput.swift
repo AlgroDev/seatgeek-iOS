@@ -15,6 +15,7 @@ protocol EventsListPresenterInput {
   func viewItem(at indexPath: IndexPath) -> EventsListViewItemProtocol?
   func selectItem(at indexPath: IndexPath)
   func didChangeText(input: String)
+  func searchBarCancelButtonClicked()
 }
 
 public protocol EventsListViewItemProtocol {

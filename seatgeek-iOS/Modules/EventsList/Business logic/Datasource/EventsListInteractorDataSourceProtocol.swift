@@ -12,4 +12,6 @@ import Foundation
 
 protocol EventsListInteractorDataSourceProtocol {
   var events: [EventsListRepositoryResponseProtocol] { get set }
+  var curents: [EventsListRepositoryResponseProtocol] { get set }
+  var searchEvents: [EventsListRepositoryResponseProtocol] { get set }
 }

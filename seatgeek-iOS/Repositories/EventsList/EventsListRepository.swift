@@ -38,12 +38,12 @@ class EventsListRepository {
 
   // MARK: - Property
 
-  private let adapter: EventsListAdapterProtocol
+  private let apiManager: APIManagerProtocol
 
   // MARK: - Lifecycle
 
-  init(adapter: EventsListAdapterProtocol) {
-    self.adapter = adapter
+  init(apiManager: APIManagerProtocol) {
+    self.apiManager = apiManager
   }
 
   // MARK: - Conversion
@@ -71,9 +71,11 @@ class EventsListRepository {
   }
 }
 
+// MARK: - EventsListRepositoryProtocol
+
 extension EventsListRepository: EventsListRepositoryProtocol {
   func retrieve(completion: @escaping (Result<[EventsListRepositoryResponseProtocol], EventRepositoryError>) -> Void) {
-    APIManager.shared.retrieve() { [weak self] result in
+    apiManager.retrieve() { [weak self] result in
       guard let self = self else { return }
       switch result {
       case let .success(adapterResponse):

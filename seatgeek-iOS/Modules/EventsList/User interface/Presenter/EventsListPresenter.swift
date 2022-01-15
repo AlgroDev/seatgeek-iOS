@@ -85,6 +85,10 @@ extension EventsListPresenter: EventsListPresenterInput {
   func didChangeText(input: String) {
     interactor.search(event: input)
   }
+
+  func searchBarCancelButtonClicked() {
+    interactor.cancelSearch()
+  }
 }
 
 // MARK: - EventsListInteractorOutput
