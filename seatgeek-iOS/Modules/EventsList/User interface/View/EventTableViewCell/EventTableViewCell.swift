@@ -19,6 +19,8 @@ class EventTableViewCell: UITableViewCell {
       eventImageView.layer.masksToBounds = true
     }
   }
+
+  @IBOutlet private(set) weak var favoriteImageView: UIImageView!
   @IBOutlet private(set) weak var titleLabel: UILabel!
   @IBOutlet private(set) weak var addressLabel: UILabel!
   @IBOutlet private(set) weak var dateLabel: UILabel!
@@ -33,5 +35,4 @@ class EventTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-    
 }

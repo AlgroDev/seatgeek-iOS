@@ -80,7 +80,8 @@ extension EventsListPresenter: EventsListPresenterInput {
                               name: name,
                               city: city,
                               country: country,
-                              image: image)
+                              image: image,
+                              isFavoriteImage: viewItem.isFavorite ? Asset.favorite.image : UIImage())
   }
 
   func selectItem(at indexPath: IndexPath) {
@@ -138,6 +139,7 @@ private struct EventsListViewItem: EventsListViewItemProtocol {
   var city: NSAttributedString?
   var country: NSAttributedString?
   var image: URL
+  var isFavoriteImage: UIImage
 }
 
 extension ISO8601DateFormatter {

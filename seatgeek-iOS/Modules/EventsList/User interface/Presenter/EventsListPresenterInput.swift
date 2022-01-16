@@ -26,4 +26,5 @@ public protocol EventsListViewItemProtocol {
   var city: NSAttributedString? { get }
   var country: NSAttributedString? { get }
   var image: URL { get }
+  var isFavoriteImage: UIImage { get }
 }

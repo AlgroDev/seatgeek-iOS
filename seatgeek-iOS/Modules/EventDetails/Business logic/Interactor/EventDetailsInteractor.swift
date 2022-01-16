@@ -63,11 +63,11 @@ extension EventDetailsInteractor: EventDetailsInteractorInput {
             let city = event?.venue?.city,
             let country = event?.venue?.country,
             let image = event?.performers.first?.image else { return }
-      var isFavorit = false
+      var isFavorite = false
       if let ids = SaveManager.get([Int].self, forKey: .favoriteEvent),
          !ids.isEmpty,
          !ids.filter({ $0 == id }).isEmpty {
-          isFavorit = true
+        isFavorite = true
       }
       let item = EventDetailsItem(title: title,
                                   datetimeLocal: datetimeLocal,
@@ -76,10 +76,10 @@ extension EventDetailsInteractor: EventDetailsInteractorInput {
                                   city: city,
                                   country: country,
                                   image: image,
-                                  isFavorite: isFavorit)
-      self?.dataSource.isFavorite = isFavorit
+                                  isFavorite: isFavorite)
+      self?.dataSource.isFavorite = isFavorite
       self?.dataSource.id = id
-      self?.output?.item(isFavorit)
+      self?.output?.item(isFavorite)
       self?.output?.display(item)
     }
   }

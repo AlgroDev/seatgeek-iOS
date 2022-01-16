@@ -42,6 +42,11 @@ class EventsListViewController: UIViewController, Loadable {
     searchBar.delegate = self
     self.dependencies.presenter?.viewDidLoad()
   }
+
+  override func viewWillAppear(_ animated: Bool) {
+    super.viewWillAppear(animated)
+    tableView.reloadData()
+  }
 }
 
 // MARK: - UITableViewDatasource
@@ -65,6 +70,7 @@ extension EventsListViewController: UITableViewDataSource {
     cell.titleLabel.numberOfLines = 2
     cell.dateLabel.attributedText = viewItem?.datetimeLocal
     cell.addressLabel.attributedText = viewItem?.city
+    cell.favoriteImageView.image = viewItem?.isFavoriteImage
     imageLoader.loadImage(imageView: cell.eventImageView, url: viewItem?.image, placeholder: UIImage(), animated: true)
 
     return cell

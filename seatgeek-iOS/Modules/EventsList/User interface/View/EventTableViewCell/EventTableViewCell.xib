@@ -45,10 +45,19 @@
                             <constraint firstAttribute="width" constant="70" id="oWV-KH-J8V"/>
                         </constraints>
                     </imageView>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Y6f-yV-lbT">
+                        <rect key="frame" x="11" y="18" width="24" height="24"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="24" id="IJm-j4-ekg"/>
+                            <constraint firstAttribute="height" constant="24" id="SLE-fX-v4h"/>
+                        </constraints>
+                    </imageView>
                 </subviews>
                 <constraints>
                     <constraint firstItem="9LI-IC-RnY" firstAttribute="leading" secondItem="hpB-nd-8Ue" secondAttribute="trailing" constant="20" id="5kV-tv-wd3"/>
+                    <constraint firstItem="Y6f-yV-lbT" firstAttribute="top" secondItem="6jD-mY-oWR" secondAttribute="top" constant="18" id="BZQ-ge-l2J"/>
                     <constraint firstAttribute="trailing" secondItem="9LI-IC-RnY" secondAttribute="trailing" constant="4" id="GFw-3K-rhG"/>
+                    <constraint firstItem="Y6f-yV-lbT" firstAttribute="leading" secondItem="6jD-mY-oWR" secondAttribute="leading" constant="11" id="N5e-Mb-AfN"/>
                     <constraint firstItem="hpB-nd-8Ue" firstAttribute="top" secondItem="9LI-IC-RnY" secondAttribute="top" id="ef5-Af-rQG"/>
                     <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="9LI-IC-RnY" secondAttribute="bottom" constant="16" id="esr-OV-xGV"/>
                     <constraint firstItem="hpB-nd-8Ue" firstAttribute="top" secondItem="6jD-mY-oWR" secondAttribute="top" constant="26" id="hKZ-2h-Eua"/>
@@ -59,6 +68,7 @@
                 <outlet property="addressLabel" destination="Mvo-bU-uKQ" id="Xn7-zM-BQ5"/>
                 <outlet property="dateLabel" destination="bBj-Lf-USk" id="a99-nZ-zMd"/>
                 <outlet property="eventImageView" destination="hpB-nd-8Ue" id="I2X-GO-Tu6"/>
+                <outlet property="favoriteImageView" destination="Y6f-yV-lbT" id="HGZ-E2-bjg"/>
                 <outlet property="titleLabel" destination="k3h-RL-ynJ" id="yXi-p0-uu1"/>
             </connections>
             <point key="canvasLocation" x="-209.42028985507247" y="171.76339285714286"/>

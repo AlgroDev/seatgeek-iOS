@@ -194,11 +194,11 @@ extension EventsListInteractor: EventsListInteractorInput {
   func item(atIndex index: Int, for categoryIndex: Int) -> EventsListItemProtocol? {
     let item = dataSource.curents.safe[index]
     let id = dataSource.curents.safe[index]?.id
-    var isFavorit = false
+    var isFavorite = false
     if let ids = SaveManager.get([Int].self, forKey: .favoriteEvent),
        !ids.isEmpty,
        !ids.filter({ $0 == id }).isEmpty {
-        isFavorit = true
+      isFavorite = true
     }
     return EventsListItem(title: item?.title ?? "",
                           datetimeLocal: item?.datetimeLocal ?? Date(),
@@ -207,7 +207,7 @@ extension EventsListInteractor: EventsListInteractorInput {
                           city: item?.venue?.city ?? "",
                           country: item?.venue?.country ?? "",
                           image: item?.performers.first?.image ?? "",
-                          isFavorite: isFavorit)
+                          isFavorite: isFavorite)
   }
 
   func selectItem(atIndex index: Int, for categoryIndex: Int) {
