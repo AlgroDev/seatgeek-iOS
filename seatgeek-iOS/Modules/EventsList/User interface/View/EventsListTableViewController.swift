@@ -15,6 +15,7 @@ protocol EventsListViewDependenciesProtocol {
 class EventsListViewController: UIViewController, Loadable {
 
   // MARK: - Outlets
+
   @IBOutlet private(set) weak var searchBar: UISearchBar!
   @IBOutlet private(set) weak var tableView: UITableView!
 
@@ -97,10 +98,6 @@ extension EventsListViewController: UISearchBarDelegate {
     searchBar.text = nil
     searchBar.resignFirstResponder()
     dependencies.presenter.searchBarCancelButtonClicked()
-  }
-
-  func searchBarResultsListButtonClicked(_ searchBar: UISearchBar) {
-
   }
 }
 // MARK: - EventsListPresenterOutput

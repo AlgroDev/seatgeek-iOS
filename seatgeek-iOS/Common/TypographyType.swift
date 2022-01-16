@@ -9,16 +9,8 @@
 import UIKit
 
 private enum TypographyFontSize {
-  static let h1: CGFloat = 34
-  static let h1Ipad: CGFloat = 46
-  static let h2: CGFloat = 28
-  static let h2Ipad: CGFloat = 24
   static let title1: CGFloat = 22
   static let title1Ipad: CGFloat = 24
-  static let title2: CGFloat = 20
-  static let title2Ipad: CGFloat = 20
-  static let subtitle: CGFloat = 17
-  static let subtitleIpad: CGFloat = 16
   static let body1: CGFloat = 17
   static let body1Ipad: CGFloat = 16
   static let body2: CGFloat = 15
@@ -41,34 +33,23 @@ private protocol TypographyFontProtocol {
 
 private var typographyTypeFontMapping: [TypographyType: TypographyFontProtocol] {
   return [
-    .h2: Header2(),
     .title1: Title1(),
-    .title2: Title2(),
-    .subtitle: Subtitle(),
-    .body1: Body1(),
     .body2: Body2(),
     .body3: Body3(),
     .body3Strong: Body3Strong(),
     .cta: CTA(),
     .caption: Caption(),
-    .chip: CHIP()
   ]
 }
 
 public enum TypographyType {
-  case h1
-  case h2
   case title1
-  case title2
-  case title3Emphasis
-  case subtitle
   case body1
   case body2
   case body3
   case body3Strong
   case cta
   case caption
-  case chip
 
   var font: UIFont {
     guard let associatedFont = typographyTypeFontMapping[self] else { return UIFont.systemFont(ofSize: 15.0) }
@@ -300,39 +281,12 @@ public extension Typography {
 
 // MARK: - Fonts
 
-private struct Header2: TypographyFontProtocol {
-  var font: UIFont {
-    if UIDevice.current.userInterfaceIdiom == .pad {
-      return .sfProTextBold(size: TypographyFontSize.h1Ipad)
-    }
-    return .sfProTextBold(size: TypographyFontSize.h2)
-  }
-}
-
 private struct Title1: TypographyFontProtocol {
   var font: UIFont {
     if UIDevice.current.userInterfaceIdiom == .pad {
       return .sfProTextBold(size: TypographyFontSize.title1Ipad)
     }
     return .sfProTextBold(size: TypographyFontSize.title1)
-  }
-}
-
-private struct Title2: TypographyFontProtocol {
-  var font: UIFont {
-    if UIDevice.current.userInterfaceIdiom == .pad {
-      return .sfProTextBold(size: TypographyFontSize.title2Ipad)
-    }
-    return .sfProTextBold(size: TypographyFontSize.title2)
-  }
-}
-
-private struct Subtitle: TypographyFontProtocol {
-  var font: UIFont {
-    if UIDevice.current.userInterfaceIdiom == .pad {
-      return .sfProTextSemibold(size: TypographyFontSize.subtitleIpad)
-    }
-    return .sfProTextSemibold(size: TypographyFontSize.subtitle)
   }
 }
 

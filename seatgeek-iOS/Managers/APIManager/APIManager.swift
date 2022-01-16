@@ -43,9 +43,9 @@ class APIManager {
 // MARK: - EventsListAdapterProtocol
 
 extension APIManager: APIManagerProtocol {
-  func retrieve(completion: @escaping (Result<[EventNetworkItemProtocol], EventsListAdapterError>) -> Void) {
+  func retrieve(completion: @escaping (Result<[EventNetworkItemProtocol], EventsListNetworkError>) -> Void) {
     sessionManager.request(APIRouter.fetchEventsList)
-      .responseDecodable(of: EventsListAdapterCodableResponse.self) { response in
+      .responseDecodable(of: EventsListCodableResponse.self) { response in
         guard let repositories = response.value else {
           return completion(.failure(.server))
         }
@@ -64,9 +64,9 @@ extension APIManager: APIManagerProtocol {
       }
   }
 
-  func retrieve(event: String, completion: @escaping (Result<[EventNetworkItemProtocol], EventsListAdapterError>) -> Void) {
+  func retrieve(event: String, completion: @escaping (Result<[EventNetworkItemProtocol], EventsListNetworkError>) -> Void) {
     sessionManager.request(APIRouter.searchEvents(event))
-      .responseDecodable(of: EventsListAdapterCodableResponse.self) { response in
+      .responseDecodable(of: EventsListCodableResponse.self) { response in
         guard let repositories = response.value else {
           return completion(.failure(.server))
         }

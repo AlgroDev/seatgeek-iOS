@@ -50,7 +50,7 @@ class EventsListRepository {
 
   // MARK: - Conversion
 
-  private func convertToEventsListRepositoryError(_ adapterError: EventsListAdapterError) -> EventRepositoryError {
+  private func convertToEventsListRepositoryError(_ adapterError: EventsListNetworkError) -> EventRepositoryError {
     switch adapterError {
     case .noInternetConnection:
       return .noInternetConnection

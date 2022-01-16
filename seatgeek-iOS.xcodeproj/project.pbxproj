@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		22604E8C0C71FCBE98E52A60 /* Pods_seatgeek_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFB6A9424F5C2D7F6D15A522 /* Pods_seatgeek_iOS.framework */; };
 		D7B33755279438A200D03C82 /* DateFormatter+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7B33754279438A200D03C82 /* DateFormatter+Extensions.swift */; };
-		D7B337572794444800D03C82 /* EventsListAdapterCodableResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7B337562794444800D03C82 /* EventsListAdapterCodableResponse.swift */; };
+		D7B337572794444800D03C82 /* EventsListCodableResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7B337562794444800D03C82 /* EventsListCodableResponse.swift */; };
 		D7B3375D27945D9C00D03C82 /* SaveManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7B3375C27945D9C00D03C82 /* SaveManager.swift */; };
 		D7D22A452792CD5600E0C8B2 /* APIRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D22A442792CD5600E0C8B2 /* APIRouter.swift */; };
 		D7D22A472792D7CF00E0C8B2 /* NetworkLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D22A462792D7CF00E0C8B2 /* NetworkLogger.swift */; };
@@ -86,7 +86,7 @@
 		11D14E61CFA0BBC6291F811C /* Pods-seatgeek-iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-seatgeek-iOS.debug.xcconfig"; path = "Target Support Files/Pods-seatgeek-iOS/Pods-seatgeek-iOS.debug.xcconfig"; sourceTree = "<group>"; };
 		5B4909EB14AD96703E4DE4CE /* Pods-seatgeek-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-seatgeek-iOS.release.xcconfig"; path = "Target Support Files/Pods-seatgeek-iOS/Pods-seatgeek-iOS.release.xcconfig"; sourceTree = "<group>"; };
 		D7B33754279438A200D03C82 /* DateFormatter+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateFormatter+Extensions.swift"; sourceTree = "<group>"; };
-		D7B337562794444800D03C82 /* EventsListAdapterCodableResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsListAdapterCodableResponse.swift; sourceTree = "<group>"; };
+		D7B337562794444800D03C82 /* EventsListCodableResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsListCodableResponse.swift; sourceTree = "<group>"; };
 		D7B3375C27945D9C00D03C82 /* SaveManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveManager.swift; sourceTree = "<group>"; };
 		D7D22A442792CD5600E0C8B2 /* APIRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRouter.swift; sourceTree = "<group>"; };
 		D7D22A462792D7CF00E0C8B2 /* NetworkLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkLogger.swift; sourceTree = "<group>"; };
@@ -221,7 +221,7 @@
 			isa = PBXGroup;
 			children = (
 				D7D71E9F279009B600A98AB7 /* EventNetworkItemProtocol.swift */,
-				D7B337562794444800D03C82 /* EventsListAdapterCodableResponse.swift */,
+				D7B337562794444800D03C82 /* EventsListCodableResponse.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -796,7 +796,7 @@
 				D7D71E27278FEACC00A98AB7 /* GeneratedAssets.swift in Sources */,
 				D7D71E46278FEEFC00A98AB7 /* EventsListInteractorOutput.swift in Sources */,
 				D7D71E0A278FE60000A98AB7 /* SceneDelegate.swift in Sources */,
-				D7B337572794444800D03C82 /* EventsListAdapterCodableResponse.swift in Sources */,
+				D7B337572794444800D03C82 /* EventsListCodableResponse.swift in Sources */,
 				D7D71E53278FEEFC00A98AB7 /* EventsListInteractorModuleFactoryProtocol.swift in Sources */,
 				D7D22A452792CD5600E0C8B2 /* APIRouter.swift in Sources */,
 				D7D22A5D2793364E00E0C8B2 /* UIFont.swift in Sources */,

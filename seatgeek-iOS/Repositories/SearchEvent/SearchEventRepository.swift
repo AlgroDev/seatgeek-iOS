@@ -24,7 +24,7 @@ class SearchEventRepository {
 
   // MARK: - Conversion
 
-  private func convertToEventsListRepositoryError(_ adapterError: EventsListAdapterError) -> EventRepositoryError {
+  private func convertToEventsListRepositoryError(_ adapterError: EventsListNetworkError) -> EventRepositoryError {
     switch adapterError {
     case .noInternetConnection:
       return .noInternetConnection
@@ -59,13 +59,13 @@ extension SearchEventRepository: SearchEventRepositoryProtocol {
         let response = adapterResponse.map { item -> EventsListRepositoryResponseProtocol in
           let datetimeLocal = self.dateFormatter.posixDate(from: item.datetimeLocal)
           return EventsListRepositoryResponse(id: item.id,
-                                               title: item.title,
-                                               datetimeLocal: datetimeLocal,
-                                               type: item.type,
-                                               venue: EventVenueRepositoryItem(name: item.venue?.name,
-                                                                               city: item.venue?.city,
-                                                                               country: item.venue?.country),
-                                               performers: self.convert(item.performers))
+                                              title: item.title,
+                                              datetimeLocal: datetimeLocal,
+                                              type: item.type,
+                                              venue: EventVenueRepositoryItem(name: item.venue?.name,
+                                                                              city: item.venue?.city,
+                                                                              country: item.venue?.country),
+                                              performers: self.convert(item.performers))
         }
         completion(.success(response))
       case let .failure(wrapperError):

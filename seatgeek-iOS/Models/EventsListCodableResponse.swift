@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct EventsListAdapterCodableResponse: Codable {
+struct EventsListCodableResponse: Codable {
   let events: [EventsListAdapterCodableResponseItem]
 }
 

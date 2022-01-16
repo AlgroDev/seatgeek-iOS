@@ -27,16 +27,13 @@ protocol EventPerformersItemProtocol {
   var image: String? { get }
 }
 
-enum EventsListAdapterError: Error {
+enum EventsListNetworkError: Error {
   case noInternetConnection
   case server
   case noData
   case unknown
   case parsing
 }
-
-
-
 
 // MARK: - EventNetworkItemProtocol
 
