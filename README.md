@@ -3,12 +3,22 @@
  The following contributing guidelines intend to ease contribution on this project. These are mostly guidelines, not rules.
 
 ## Table of Contents
-
+* [Installing Cocoapods](#Installing Cocoapods)
 * [Styleguides](#styleguides)
 	* [Git Commit Messages](#git-commit-messages)
 	* [Issue Reference](#issue-reference)
 	* [Commit Nature](#commit-nature)
 
+## Installing Cocoapods
+
+- Open Terminal
+- Enter command: `sudo gem install cocoapods`
+- Enter your password
+
+> Wait for this to finish, don't touch your terminal.  It might take a couple minutes
+
+- Run command `pod setup`
+- Run command `pod install`
 ## Styleguides
 
 ### Git Commit Messages
