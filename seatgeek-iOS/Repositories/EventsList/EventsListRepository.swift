@@ -11,7 +11,7 @@ import Foundation
 public protocol EventsListRepositoryResponseProtocol {
   var id: Int? { get }
   var title: String? { get }
-  var datetimeLocal: String? { get }
+  var datetimeLocal: Date? { get }
   var type: String? { get }
   var venue: EventVenueRepositoryItemProtocol? { get }
   var performers: [EventPerformersRepositoryItemProtocol] { get }
@@ -39,11 +39,13 @@ class EventsListRepository {
   // MARK: - Property
 
   private let apiManager: APIManagerProtocol
+  private let dateFormatter: DateFormatter
 
   // MARK: - Lifecycle
 
   init(apiManager: APIManagerProtocol) {
     self.apiManager = apiManager
+    self.dateFormatter = DateFormatter()
   }
 
   // MARK: - Conversion
@@ -80,9 +82,10 @@ extension EventsListRepository: EventsListRepositoryProtocol {
       switch result {
       case let .success(adapterResponse):
         let response = adapterResponse.map { item -> EventsListRepositoryResponse in
+          let datetimeLocal = self.dateFormatter.posixDate(from: item.datetimeLocal)
           return EventsListRepositoryResponse(id: item.id,
                                               title: item.title,
-                                              datetimeLocal: item.datetimeLocal,
+                                              datetimeLocal: datetimeLocal,
                                               type: item.type,
                                               venue: EventVenueRepositoryItem(name: item.venue?.name, city: item.venue?.city, country: item.venue?.country),
                                               performers: self.convert(item.performers))
@@ -101,7 +104,7 @@ extension EventsListRepository: EventsListRepositoryProtocol {
 struct EventsListRepositoryResponse: EventsListRepositoryResponseProtocol {
   var id: Int?
   var title: String?
-  var datetimeLocal: String?
+  var datetimeLocal: Date?
   var type: String?
   var venue: EventVenueRepositoryItemProtocol?
   var performers: [EventPerformersRepositoryItemProtocol]

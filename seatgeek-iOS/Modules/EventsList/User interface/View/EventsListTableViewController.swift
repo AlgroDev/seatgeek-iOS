@@ -27,7 +27,7 @@ class EventsListViewController: UIViewController, Loadable {
 
   // MARK: - Property
 
-  var viewsToHideDuringLoading: [UIView] { [tableView, searchBar] }
+  var viewsToHideDuringLoading: [UIView] { [] }
   var activityIndicator: UIActivityIndicatorView?
   var imageLoader: ImageDownloader!
   var dependencies: EventsListViewDependenciesProtocol!
@@ -62,6 +62,7 @@ extension EventsListViewController: UITableViewDataSource {
     else { return UITableViewCell() }
 
     cell.titleLabel.attributedText = viewItem?.title
+    cell.titleLabel.numberOfLines = 2
     cell.dateLabel.attributedText = viewItem?.datetimeLocal
     cell.addressLabel.attributedText = viewItem?.city
     imageLoader.loadImage(imageView: cell.eventImageView, url: viewItem?.image, placeholder: UIImage(), animated: true)

@@ -9,9 +9,30 @@
 import UIKit
 
 private enum TypographyFontSize {
-  static let errorDescription: CGFloat = 22
-  static let errorTitleButton: CGFloat = 17
-
+  static let h1: CGFloat = 34
+  static let h1Ipad: CGFloat = 46
+  static let h2: CGFloat = 28
+  static let h2Ipad: CGFloat = 24
+  static let title1: CGFloat = 22
+  static let title1Ipad: CGFloat = 24
+  static let title2: CGFloat = 20
+  static let title2Ipad: CGFloat = 20
+  static let subtitle: CGFloat = 17
+  static let subtitleIpad: CGFloat = 16
+  static let body1: CGFloat = 17
+  static let body1Ipad: CGFloat = 16
+  static let body2: CGFloat = 15
+  static let body2Ipad: CGFloat = 14
+  static let body3: CGFloat = 13
+  static let body3Ipad: CGFloat = 12
+  static let body3Strong: CGFloat = 13
+  static let body3StrongIpad: CGFloat = 12
+  static let cta: CGFloat = 16
+  static let ctaIpad: CGFloat = 12
+  static let caption: CGFloat = 12
+  static let captionIpad: CGFloat = 11
+  static let chip: CGFloat = 11
+  static let chipIpad: CGFloat = 12
 }
 
 private protocol TypographyFontProtocol {
@@ -20,21 +41,40 @@ private protocol TypographyFontProtocol {
 
 private var typographyTypeFontMapping: [TypographyType: TypographyFontProtocol] {
   return [
-    .errorDescription: ErrorDescription(),
-    .errorTitleButton: ErrorTitleButton()
+    .h2: Header2(),
+    .title1: Title1(),
+    .title2: Title2(),
+    .subtitle: Subtitle(),
+    .body1: Body1(),
+    .body2: Body2(),
+    .body3: Body3(),
+    .body3Strong: Body3Strong(),
+    .cta: CTA(),
+    .caption: Caption(),
+    .chip: CHIP()
   ]
 }
 
 public enum TypographyType {
-  case errorDescription
-  case errorTitleButton
+  case h1
+  case h2
+  case title1
+  case title2
+  case title3Emphasis
+  case subtitle
+  case body1
+  case body2
+  case body3
+  case body3Strong
+  case cta
+  case caption
+  case chip
 
   var font: UIFont {
     guard let associatedFont = typographyTypeFontMapping[self] else { return UIFont.systemFont(ofSize: 15.0) }
     return associatedFont.font
   }
 }
-
 
 public struct Typography {}
 
@@ -257,16 +297,105 @@ public extension Typography {
     }
   }
 }
+
 // MARK: - Fonts
 
-private struct ErrorDescription: TypographyFontProtocol {
+private struct Header2: TypographyFontProtocol {
   var font: UIFont {
-    return UIFont.systemFont(ofSize: TypographyFontSize.errorDescription)
+    if UIDevice.current.userInterfaceIdiom == .pad {
+      return .sfProTextBold(size: TypographyFontSize.h1Ipad)
+    }
+    return .sfProTextBold(size: TypographyFontSize.h2)
   }
 }
 
-private struct ErrorTitleButton: TypographyFontProtocol {
+private struct Title1: TypographyFontProtocol {
   var font: UIFont {
-    return UIFont.systemFont(ofSize: TypographyFontSize.errorTitleButton)
+    if UIDevice.current.userInterfaceIdiom == .pad {
+      return .sfProTextBold(size: TypographyFontSize.title1Ipad)
+    }
+    return .sfProTextBold(size: TypographyFontSize.title1)
   }
 }
+
+private struct Title2: TypographyFontProtocol {
+  var font: UIFont {
+    if UIDevice.current.userInterfaceIdiom == .pad {
+      return .sfProTextBold(size: TypographyFontSize.title2Ipad)
+    }
+    return .sfProTextBold(size: TypographyFontSize.title2)
+  }
+}
+
+private struct Subtitle: TypographyFontProtocol {
+  var font: UIFont {
+    if UIDevice.current.userInterfaceIdiom == .pad {
+      return .sfProTextSemibold(size: TypographyFontSize.subtitleIpad)
+    }
+    return .sfProTextSemibold(size: TypographyFontSize.subtitle)
+  }
+}
+
+private struct Body1: TypographyFontProtocol {
+  var font: UIFont {
+    if UIDevice.current.userInterfaceIdiom == .pad {
+      return .sfProTextRegular(size: TypographyFontSize.body1Ipad)
+    }
+    return .sfProTextRegular(size: TypographyFontSize.body1)
+  }
+}
+
+private struct Body2: TypographyFontProtocol {
+  var font: UIFont {
+    if UIDevice.current.userInterfaceIdiom == .pad {
+      return .sfProTextRegular(size: TypographyFontSize.body2Ipad)
+    }
+    return .sfProTextRegular(size: TypographyFontSize.body2)
+  }
+}
+
+private struct CTA: TypographyFontProtocol {
+  var font: UIFont {
+    if UIDevice.current.userInterfaceIdiom == .pad {
+      return .sfProTextMedium(ofSize: TypographyFontSize.ctaIpad)
+    }
+    return .sfProTextMedium(ofSize: TypographyFontSize.cta)
+  }
+}
+
+private struct Body3: TypographyFontProtocol {
+  var font: UIFont {
+    if UIDevice.current.userInterfaceIdiom == .pad {
+      return .sfProTextRegular(size: TypographyFontSize.body3Ipad)
+    }
+    return .sfProTextRegular(size: TypographyFontSize.body3)
+  }
+}
+
+private struct Body3Strong: TypographyFontProtocol {
+  var font: UIFont {
+    if UIDevice.current.userInterfaceIdiom == .pad {
+      return .sfProTextSemibold(size: TypographyFontSize.body3StrongIpad)
+    }
+    return .sfProTextSemibold(size: TypographyFontSize.body3Strong)
+  }
+}
+
+private struct Caption: TypographyFontProtocol {
+  var font: UIFont {
+    if UIDevice.current.userInterfaceIdiom == .pad {
+      return .sfProTextRegular(size: TypographyFontSize.captionIpad)
+    }
+    return .sfProTextRegular(size: TypographyFontSize.caption)
+  }
+}
+
+private struct CHIP: TypographyFontProtocol {
+  var font: UIFont {
+    if UIDevice.current.userInterfaceIdiom == .pad {
+      return .sfProTextSemibold(size: TypographyFontSize.chipIpad)
+    }
+    return .sfProTextSemibold(size: TypographyFontSize.chip)
+  }
+}
+

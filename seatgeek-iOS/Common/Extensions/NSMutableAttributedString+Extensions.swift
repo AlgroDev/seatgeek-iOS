@@ -69,4 +69,29 @@ extension NSMutableAttributedString {
 
     return paragraphToReturn
   }
+
+  func apply(font: UIFont, color: UIColor) {
+    apply(font: font)
+    apply(color: color)
+  }
+
+  func apply(font: UIFont, color: UIColor, alignment: NSTextAlignment) {
+    apply(font: font)
+    apply(color: color)
+    apply(alignment: alignment)
+  }
+
+  func apply(alignment: NSTextAlignment) {
+    let paragraphStyle = NSMutableParagraphStyle()
+    paragraphStyle.alignment = alignment
+    addAttribute(.paragraphStyle, value: paragraphStyle, range: NSRange(location: 0, length: length))
+  }
+
+  func apply(color: UIColor) {
+    addAttribute(.foregroundColor, value: color, range: NSRange(location: 0, length: length))
+  }
+
+  func apply(font: UIFont) {
+    addAttribute(.font, value: font, range: NSRange(location: 0, length: length))
+  }
 }

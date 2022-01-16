@@ -19,14 +19,14 @@ final class EventsListPresenter: AttributedStringConvertible {
 
   private enum Constants {
     static let title = ""
-
+    static let dateFormat = "EEE, dd MMM dd yyyy hh:mm at"
     enum Style {
-      static let title: Styles = (.errorDescription, .black)
-      static let datetimeLocal: Styles = (.errorDescription, .black)
-      static let type: Styles = (.errorDescription, .black)
-      static let name: Styles = (.errorDescription, .black)
-      static let city: Styles = (.errorDescription, .black)
-      static let country: Styles = (.errorDescription, .black)
+      static let title: Styles = (.body1, .black)
+      static let datetimeLocal: Styles = (.body2, .gray)
+      static let type: Styles = (.body3, .black)
+      static let name: Styles = (.body3Strong, .black)
+      static let city: Styles = (.caption, .gray)
+      static let country: Styles = (.cta, .gray)
     }
   }
 
@@ -62,12 +62,17 @@ extension EventsListPresenter: EventsListPresenterInput {
   func viewItem(at indexPath: IndexPath) -> EventsListViewItemProtocol? {
     output?.hideLoading()
     guard let viewItem = interactor.item(atIndex: indexPath.row, for: indexPath.section) else { return nil }
+
+    let formatter = DateFormatter()
+    formatter.dateFormat = Constants.dateFormat
+
     let title = convertText(viewItem.title, style: Constants.Style.title)
-    let datetimeLocal = convertText(viewItem.datetimeLocal, style: Constants.Style.datetimeLocal)
+    let datetimeLocal = convertText(formatter.string(from: viewItem.datetimeLocal), style: Constants.Style.datetimeLocal)
     let type = convertText(viewItem.type, style: Constants.Style.type)
     let name = convertText(viewItem.name, style: Constants.Style.name)
     let city = convertText(viewItem.city, style: Constants.Style.city)
     let country = convertText(viewItem.country, style: Constants.Style.country)
+
     guard let image = URL(string: viewItem.image) else { return nil }
     return EventsListViewItem(title: title,
                               datetimeLocal: datetimeLocal,
@@ -133,4 +138,23 @@ private struct EventsListViewItem: EventsListViewItemProtocol {
   var city: NSAttributedString?
   var country: NSAttributedString?
   var image: URL
+}
+
+extension ISO8601DateFormatter {
+    convenience init(_ formatOptions: Options) {
+        self.init()
+        self.formatOptions = formatOptions
+    }
+}
+
+extension Formatter {
+    static let iso8601withFractionalSeconds = ISO8601DateFormatter([.withInternetDateTime, .withFractionalSeconds])
+}
+
+extension Date {
+    var iso8601withFractionalSeconds: String { return Formatter.iso8601withFractionalSeconds.string(from: self) }
+}
+
+extension String {
+    var iso8601withFractionalSeconds: Date? { return Formatter.iso8601withFractionalSeconds.date(from: self) }
 }

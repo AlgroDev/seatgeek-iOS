@@ -22,7 +22,7 @@ public protocol EventsListInteractorInput {
 
 public protocol EventsListItemProtocol {
   var title: String { get }
-  var datetimeLocal: String { get }
+  var datetimeLocal: Date { get }
   var type: String { get }
   var name: String { get }
   var city: String { get }

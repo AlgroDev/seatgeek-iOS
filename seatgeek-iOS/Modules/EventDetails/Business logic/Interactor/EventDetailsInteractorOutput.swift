@@ -21,7 +21,7 @@ public protocol EventDetailsInteractorOutput: AnyObject {
 
 public protocol EventDetailsItemProtocol {
   var title: String { get }
-  var datetimeLocal: String { get }
+  var datetimeLocal: Date { get }
   var type: String { get }
   var name: String { get }
   var city: String { get }

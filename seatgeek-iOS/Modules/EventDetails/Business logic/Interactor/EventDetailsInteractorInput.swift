@@ -12,4 +12,5 @@ import Foundation
 
 public protocol EventDetailsInteractorInput {
   func retrieve()
+  func addToFavorites()
 }

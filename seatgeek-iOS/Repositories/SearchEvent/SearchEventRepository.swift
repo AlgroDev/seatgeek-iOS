@@ -13,11 +13,13 @@ class SearchEventRepository {
   // MARK: - Property
 
   private let apiManager: APIManagerProtocol
+  private let dateFormatter: DateFormatter
 
   // MARK: - Lifecycle
 
   init(apiManager: APIManagerProtocol) {
     self.apiManager = apiManager
+    self.dateFormatter = DateFormatter()
   }
 
   // MARK: - Conversion
@@ -55,11 +57,14 @@ extension SearchEventRepository: SearchEventRepositoryProtocol {
       switch result {
       case let .success(adapterResponse):
         let response = adapterResponse.map { item -> EventsListRepositoryResponseProtocol in
+          let datetimeLocal = self.dateFormatter.posixDate(from: item.datetimeLocal)
           return EventsListRepositoryResponse(id: item.id,
                                                title: item.title,
-                                               datetimeLocal: item.datetimeLocal,
+                                               datetimeLocal: datetimeLocal,
                                                type: item.type,
-                                               venue: EventVenueRepositoryItem(name: item.venue?.name, city: item.venue?.city, country: item.venue?.country),
+                                               venue: EventVenueRepositoryItem(name: item.venue?.name,
+                                                                               city: item.venue?.city,
+                                                                               country: item.venue?.country),
                                                performers: self.convert(item.performers))
         }
         completion(.success(response))

@@ -19,10 +19,13 @@ class EventDetailsViewController: UIViewController, Loadable {
   
   @IBOutlet private(set) weak var dateLabel: UILabel!
   @IBOutlet private(set) weak var addressLabel: UILabel!
-  @IBOutlet private(set) weak var eventImageView: UIImageView!
-  @IBOutlet private(set) weak var favoriteBarItem: UIBarButtonItem!
+  @IBOutlet private(set) weak var eventImageView: UIImageView! {
+    didSet {
+      eventImageView.layer.cornerRadius = 10
+      eventImageView.layer.masksToBounds = true
+    }
+  }
 
-  
   // MARK: - Property
   
   var viewsToHideDuringLoading: [UIView] { view.subviews }
@@ -34,6 +37,7 @@ class EventDetailsViewController: UIViewController, Loadable {
   
   override func viewDidLoad() {
     super.viewDidLoad()
+    setupRightBarButton()
     self.dependencies.presenter?.viewDidLoad()
   }
 
@@ -43,6 +47,19 @@ class EventDetailsViewController: UIViewController, Loadable {
       return
     }
     navigationItem.leftBarButtonItem?.image = Asset.notFavorite.image
+  }
+
+  private func setupRightBarButton() {
+    navigationItem.rightBarButtonItem = UIBarButtonItem(image: Asset.notFavorite.image,
+                                                       landscapeImagePhone: Asset.notFavorite.image,
+                                                       style: .plain,
+                                                       target: self,
+                                                       action: #selector(didTapOnRightBarButton))
+    navigationItem.rightBarButtonItem?.tintColor = .systemRed
+  }
+
+  @objc private func didTapOnRightBarButton() {
+    navigationItem.rightBarButtonItem?.image = Asset.favorite.image
   }
 }
 
@@ -55,11 +72,9 @@ extension EventDetailsViewController: EventDetailsPresenterOutput {
     addressLabel.attributedText = viewItem.city
     
     let label = UILabel()
-    label.backgroundColor = .clear
+    label.text = viewItem.title?.string
     label.numberOfLines = 2
     label.textAlignment = .center
-    label.textColor = .black
-    label.text = viewItem.title?.string //"FIFA" + " \n " + "Europe 2018-2019"
     self.navigationItem.titleView = label
   }
   

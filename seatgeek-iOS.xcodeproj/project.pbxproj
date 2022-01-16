@@ -8,9 +8,18 @@
 
 /* Begin PBXBuildFile section */
 		22604E8C0C71FCBE98E52A60 /* Pods_seatgeek_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFB6A9424F5C2D7F6D15A522 /* Pods_seatgeek_iOS.framework */; };
+		D7B33755279438A200D03C82 /* DateFormatter+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7B33754279438A200D03C82 /* DateFormatter+Extensions.swift */; };
+		D7B337572794444800D03C82 /* EventsListAdapterCodableResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7B337562794444800D03C82 /* EventsListAdapterCodableResponse.swift */; };
+		D7B3375D27945D9C00D03C82 /* SaveManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7B3375C27945D9C00D03C82 /* SaveManager.swift */; };
 		D7D22A452792CD5600E0C8B2 /* APIRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D22A442792CD5600E0C8B2 /* APIRouter.swift */; };
 		D7D22A472792D7CF00E0C8B2 /* NetworkLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D22A462792D7CF00E0C8B2 /* NetworkLogger.swift */; };
 		D7D22A492792D99E00E0C8B2 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D22A482792D99E00E0C8B2 /* APIManager.swift */; };
+		D7D22A57279335A000E0C8B2 /* SFProText-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = D7D22A52279335A000E0C8B2 /* SFProText-Regular.otf */; };
+		D7D22A58279335A000E0C8B2 /* SFProText-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = D7D22A53279335A000E0C8B2 /* SFProText-Light.otf */; };
+		D7D22A59279335A000E0C8B2 /* SFProText-Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = D7D22A54279335A000E0C8B2 /* SFProText-Semibold.otf */; };
+		D7D22A5A279335A000E0C8B2 /* SFProText-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = D7D22A55279335A000E0C8B2 /* SFProText-Medium.otf */; };
+		D7D22A5B279335A000E0C8B2 /* SFProText-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D7D22A56279335A000E0C8B2 /* SFProText-Bold.ttf */; };
+		D7D22A5D2793364E00E0C8B2 /* UIFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D22A5C2793364E00E0C8B2 /* UIFont.swift */; };
 		D7D38394279129E600619C9A /* SelectedEventRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D38393279129E600619C9A /* SelectedEventRepository.swift */; };
 		D7D38396279129FA00619C9A /* SelectedEventRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D38395279129FA00619C9A /* SelectedEventRepositoryProtocol.swift */; };
 		D7D383982791311600619C9A /* AttributedStringConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D383972791311600619C9A /* AttributedStringConvertible.swift */; };
@@ -66,8 +75,7 @@
 		D7D71E8E278FF38700A98AB7 /* EventDetailsInteractorDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D71E78278FF38700A98AB7 /* EventDetailsInteractorDataSource.swift */; };
 		D7D71E9B2790080F00A98AB7 /* EventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D71E992790080F00A98AB7 /* EventTableViewCell.swift */; };
 		D7D71E9C2790080F00A98AB7 /* EventTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7D71E9A2790080F00A98AB7 /* EventTableViewCell.xib */; };
-		D7D71EA0279009B600A98AB7 /* EventsListAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D71E9F279009B600A98AB7 /* EventsListAdapter.swift */; };
-		D7D71EA2279009E200A98AB7 /* NetworkWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D71EA1279009E200A98AB7 /* NetworkWrapper.swift */; };
+		D7D71EA0279009B600A98AB7 /* EventNetworkItemProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D71E9F279009B600A98AB7 /* EventNetworkItemProtocol.swift */; };
 		D7D71EA6279051DE00A98AB7 /* APIManagerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D71EA5279051DE00A98AB7 /* APIManagerProtocol.swift */; };
 		D7D71EA827906B4800A98AB7 /* Collection+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D71EA727906B4800A98AB7 /* Collection+Extensions.swift */; };
 		D7D71EB02790925F00A98AB7 /* EventsListRepositoryResponseProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D71EAF2790925F00A98AB7 /* EventsListRepositoryResponseProtocol.swift */; };
@@ -77,9 +85,18 @@
 /* Begin PBXFileReference section */
 		11D14E61CFA0BBC6291F811C /* Pods-seatgeek-iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-seatgeek-iOS.debug.xcconfig"; path = "Target Support Files/Pods-seatgeek-iOS/Pods-seatgeek-iOS.debug.xcconfig"; sourceTree = "<group>"; };
 		5B4909EB14AD96703E4DE4CE /* Pods-seatgeek-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-seatgeek-iOS.release.xcconfig"; path = "Target Support Files/Pods-seatgeek-iOS/Pods-seatgeek-iOS.release.xcconfig"; sourceTree = "<group>"; };
+		D7B33754279438A200D03C82 /* DateFormatter+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateFormatter+Extensions.swift"; sourceTree = "<group>"; };
+		D7B337562794444800D03C82 /* EventsListAdapterCodableResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsListAdapterCodableResponse.swift; sourceTree = "<group>"; };
+		D7B3375C27945D9C00D03C82 /* SaveManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveManager.swift; sourceTree = "<group>"; };
 		D7D22A442792CD5600E0C8B2 /* APIRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRouter.swift; sourceTree = "<group>"; };
 		D7D22A462792D7CF00E0C8B2 /* NetworkLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkLogger.swift; sourceTree = "<group>"; };
 		D7D22A482792D99E00E0C8B2 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
+		D7D22A52279335A000E0C8B2 /* SFProText-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFProText-Regular.otf"; sourceTree = "<group>"; };
+		D7D22A53279335A000E0C8B2 /* SFProText-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFProText-Light.otf"; sourceTree = "<group>"; };
+		D7D22A54279335A000E0C8B2 /* SFProText-Semibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFProText-Semibold.otf"; sourceTree = "<group>"; };
+		D7D22A55279335A000E0C8B2 /* SFProText-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFProText-Medium.otf"; sourceTree = "<group>"; };
+		D7D22A56279335A000E0C8B2 /* SFProText-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFProText-Bold.ttf"; sourceTree = "<group>"; };
+		D7D22A5C2793364E00E0C8B2 /* UIFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFont.swift; sourceTree = "<group>"; };
 		D7D38393279129E600619C9A /* SelectedEventRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedEventRepository.swift; sourceTree = "<group>"; };
 		D7D38395279129FA00619C9A /* SelectedEventRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedEventRepositoryProtocol.swift; sourceTree = "<group>"; };
 		D7D383972791311600619C9A /* AttributedStringConvertible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttributedStringConvertible.swift; sourceTree = "<group>"; };
@@ -137,8 +154,7 @@
 		D7D71E78278FF38700A98AB7 /* EventDetailsInteractorDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailsInteractorDataSource.swift; sourceTree = "<group>"; };
 		D7D71E992790080F00A98AB7 /* EventTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventTableViewCell.swift; sourceTree = "<group>"; };
 		D7D71E9A2790080F00A98AB7 /* EventTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EventTableViewCell.xib; sourceTree = "<group>"; };
-		D7D71E9F279009B600A98AB7 /* EventsListAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsListAdapter.swift; sourceTree = "<group>"; };
-		D7D71EA1279009E200A98AB7 /* NetworkWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkWrapper.swift; sourceTree = "<group>"; };
+		D7D71E9F279009B600A98AB7 /* EventNetworkItemProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventNetworkItemProtocol.swift; sourceTree = "<group>"; };
 		D7D71EA5279051DE00A98AB7 /* APIManagerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManagerProtocol.swift; sourceTree = "<group>"; };
 		D7D71EA727906B4800A98AB7 /* Collection+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Collection+Extensions.swift"; sourceTree = "<group>"; };
 		D7D71EAF2790925F00A98AB7 /* EventsListRepositoryResponseProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsListRepositoryResponseProtocol.swift; sourceTree = "<group>"; };
@@ -167,11 +183,67 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		D7B33758279445A400D03C82 /* APIManager */ = {
+			isa = PBXGroup;
+			children = (
+				D7D22A482792D99E00E0C8B2 /* APIManager.swift */,
+				D7D71EA5279051DE00A98AB7 /* APIManagerProtocol.swift */,
+			);
+			path = APIManager;
+			sourceTree = "<group>";
+		};
+		D7B33759279445E200D03C82 /* Logger */ = {
+			isa = PBXGroup;
+			children = (
+				D7D22A462792D7CF00E0C8B2 /* NetworkLogger.swift */,
+			);
+			path = Logger;
+			sourceTree = "<group>";
+		};
+		D7B3375A27945D8500D03C82 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				D7B3375B27945D8E00D03C82 /* SaveManager */,
+				D7B33758279445A400D03C82 /* APIManager */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		D7B3375B27945D8E00D03C82 /* SaveManager */ = {
+			isa = PBXGroup;
+			children = (
+				D7B3375C27945D9C00D03C82 /* SaveManager.swift */,
+			);
+			path = SaveManager;
+			sourceTree = "<group>";
+		};
 		D7D22A4A2792DB3900E0C8B2 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				D7D71E9F279009B600A98AB7 /* EventNetworkItemProtocol.swift */,
+				D7B337562794444800D03C82 /* EventsListAdapterCodableResponse.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		D7D22A50279335A000E0C8B2 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				D7D22A51279335A000E0C8B2 /* SFProText */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		D7D22A51279335A000E0C8B2 /* SFProText */ = {
+			isa = PBXGroup;
+			children = (
+				D7D22A52279335A000E0C8B2 /* SFProText-Regular.otf */,
+				D7D22A53279335A000E0C8B2 /* SFProText-Light.otf */,
+				D7D22A54279335A000E0C8B2 /* SFProText-Semibold.otf */,
+				D7D22A55279335A000E0C8B2 /* SFProText-Medium.otf */,
+				D7D22A56279335A000E0C8B2 /* SFProText-Bold.ttf */,
+			);
+			path = SFProText;
 			sourceTree = "<group>";
 		};
 		D7D38392279129D300619C9A /* SelectedEvent */ = {
@@ -279,6 +351,7 @@
 		D7D71E1C278FEA2600A98AB7 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				D7D22A50279335A000E0C8B2 /* Fonts */,
 				D7D71E1D278FEA5200A98AB7 /* Localizable */,
 				D7D71E10278FE60100A98AB7 /* Assets.xcassets */,
 			);
@@ -332,6 +405,7 @@
 				D7D383972791311600619C9A /* AttributedStringConvertible.swift */,
 				D7D383992791313A00619C9A /* TypographyType.swift */,
 				D7D3839B2791316600619C9A /* UIViewStyle.swift */,
+				D7D22A5C2793364E00E0C8B2 /* UIFont.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -342,6 +416,7 @@
 				D7D71E5F278FEFD800A98AB7 /* UIView+Extensions.swift */,
 				D7D71EA727906B4800A98AB7 /* Collection+Extensions.swift */,
 				D7D3839D279131AA00619C9A /* NSMutableAttributedString+Extensions.swift */,
+				D7B33754279438A200D03C82 /* DateFormatter+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -447,11 +522,9 @@
 			isa = PBXGroup;
 			children = (
 				D7D22A4A2792DB3900E0C8B2 /* Models */,
-				D7D71EAC2790920700A98AB7 /* Adapters */,
 				D7D71EAD2790921100A98AB7 /* Wrapper */,
-				D7D22A442792CD5600E0C8B2 /* APIRouter.swift */,
-				D7D22A462792D7CF00E0C8B2 /* NetworkLogger.swift */,
-				D7D22A482792D99E00E0C8B2 /* APIManager.swift */,
+				D7B33759279445E200D03C82 /* Logger */,
+				D7B3375A27945D8500D03C82 /* Managers */,
 			);
 			name = "Data Proxy";
 			sourceTree = "<group>";
@@ -475,15 +548,6 @@
 			path = Repositories;
 			sourceTree = "<group>";
 		};
-		D7D71E9E279008CA00A98AB7 /* EventsList */ = {
-			isa = PBXGroup;
-			children = (
-				D7D71E9F279009B600A98AB7 /* EventsListAdapter.swift */,
-				D7D71EA5279051DE00A98AB7 /* APIManagerProtocol.swift */,
-			);
-			path = EventsList;
-			sourceTree = "<group>";
-		};
 		D7D71EA927908F2200A98AB7 /* Datasource */ = {
 			isa = PBXGroup;
 			children = (
@@ -496,9 +560,9 @@
 		D7D71EAA27908F3700A98AB7 /* Interactor */ = {
 			isa = PBXGroup;
 			children = (
-				D7D71E66278FF38700A98AB7 /* EventDetailsInteractorOutput.swift */,
-				D7D71E6A278FF38700A98AB7 /* EventDetailsInteractorInput.swift */,
 				D7D71E71278FF38700A98AB7 /* EventDetailsInteractor.swift */,
+				D7D71E6A278FF38700A98AB7 /* EventDetailsInteractorInput.swift */,
+				D7D71E66278FF38700A98AB7 /* EventDetailsInteractorOutput.swift */,
 			);
 			path = Interactor;
 			sourceTree = "<group>";
@@ -512,18 +576,10 @@
 			path = "Module factory";
 			sourceTree = "<group>";
 		};
-		D7D71EAC2790920700A98AB7 /* Adapters */ = {
-			isa = PBXGroup;
-			children = (
-				D7D71E9E279008CA00A98AB7 /* EventsList */,
-			);
-			path = Adapters;
-			sourceTree = "<group>";
-		};
 		D7D71EAD2790921100A98AB7 /* Wrapper */ = {
 			isa = PBXGroup;
 			children = (
-				D7D71EA1279009E200A98AB7 /* NetworkWrapper.swift */,
+				D7D22A442792CD5600E0C8B2 /* APIRouter.swift */,
 			);
 			path = Wrapper;
 			sourceTree = "<group>";
@@ -608,10 +664,15 @@
 			files = (
 				D7D71E7A278FF38700A98AB7 /* EventDetails.storyboard in Resources */,
 				D7D71E14278FE60100A98AB7 /* LaunchScreen.storyboard in Resources */,
+				D7D22A57279335A000E0C8B2 /* SFProText-Regular.otf in Resources */,
+				D7D22A58279335A000E0C8B2 /* SFProText-Light.otf in Resources */,
 				D7D71E20278FEA6600A98AB7 /* Localizable.strings in Resources */,
 				D7D71E11278FE60100A98AB7 /* Assets.xcassets in Resources */,
 				D7D71E0F278FE60000A98AB7 /* Main.storyboard in Resources */,
+				D7D22A5B279335A000E0C8B2 /* SFProText-Bold.ttf in Resources */,
 				D7D71E44278FEEFC00A98AB7 /* EventsList.storyboard in Resources */,
+				D7D22A5A279335A000E0C8B2 /* SFProText-Medium.otf in Resources */,
+				D7D22A59279335A000E0C8B2 /* SFProText-Semibold.otf in Resources */,
 				D7D71E9C2790080F00A98AB7 /* EventTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -712,12 +773,12 @@
 				D7D3839C2791316600619C9A /* UIViewStyle.swift in Sources */,
 				D7D71E80278FF38700A98AB7 /* EventDetailsInteractorInput.swift in Sources */,
 				D7D71E86278FF38700A98AB7 /* EventDetailsInteractorDataSourceProtocol.swift in Sources */,
-				D7D71EA0279009B600A98AB7 /* EventsListAdapter.swift in Sources */,
+				D7D71EA0279009B600A98AB7 /* EventNetworkItemProtocol.swift in Sources */,
 				D7D3839A2791313A00619C9A /* TypographyType.swift in Sources */,
-				D7D71EA2279009E200A98AB7 /* NetworkWrapper.swift in Sources */,
 				D7D71E4A278FEEFC00A98AB7 /* EventsListInteractorInput.swift in Sources */,
 				D7D71E4F278FEEFC00A98AB7 /* EventsListPresenterInput.swift in Sources */,
 				D7D71E89278FF38700A98AB7 /* EventDetailsInteractorModuleFactoryProtocol.swift in Sources */,
+				D7B3375D27945D9C00D03C82 /* SaveManager.swift in Sources */,
 				D7D71EA827906B4800A98AB7 /* Collection+Extensions.swift in Sources */,
 				D7D71E08278FE60000A98AB7 /* AppDelegate.swift in Sources */,
 				D7D71E4D278FEEFC00A98AB7 /* EventsListTableViewController.swift in Sources */,
@@ -735,11 +796,14 @@
 				D7D71E27278FEACC00A98AB7 /* GeneratedAssets.swift in Sources */,
 				D7D71E46278FEEFC00A98AB7 /* EventsListInteractorOutput.swift in Sources */,
 				D7D71E0A278FE60000A98AB7 /* SceneDelegate.swift in Sources */,
+				D7B337572794444800D03C82 /* EventsListAdapterCodableResponse.swift in Sources */,
 				D7D71E53278FEEFC00A98AB7 /* EventsListInteractorModuleFactoryProtocol.swift in Sources */,
 				D7D22A452792CD5600E0C8B2 /* APIRouter.swift in Sources */,
+				D7D22A5D2793364E00E0C8B2 /* UIFont.swift in Sources */,
 				D7D71E51278FEEFC00A98AB7 /* EventsListInteractor.swift in Sources */,
 				D7D71E85278FF38700A98AB7 /* EventDetailsPresenterInput.swift in Sources */,
 				D7D71E50278FEEFC00A98AB7 /* EventsListInteractorDataSourceProtocol.swift in Sources */,
+				D7B33755279438A200D03C82 /* DateFormatter+Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

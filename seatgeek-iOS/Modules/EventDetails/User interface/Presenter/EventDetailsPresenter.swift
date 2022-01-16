@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SwiftUI
 
 protocol EventDetailsPresenterDependenciesProtocol {
   var interactor: EventDetailsInteractorInput { get }
@@ -19,14 +20,14 @@ final class EventDetailsPresenter: AttributedStringConvertible {
 
   private enum Constants {
     static let title = ""
-
+    static let dateFormat = "EEE, dd MMM dd yyyy hh:mm at"
     enum Style {
-      static let title: Styles = (.errorDescription, .black)
-      static let datetimeLocal: Styles = (.errorDescription, .black)
-      static let type: Styles = (.errorDescription, .black)
-      static let name: Styles = (.errorDescription, .black)
-      static let city: Styles = (.errorDescription, .black)
-      static let country: Styles = (.errorDescription, .black)
+      static let title: Styles = (.title1, .black)
+      static let datetimeLocal: Styles = (.body2, .black)
+      static let type: Styles = (.body3, .black)
+      static let name: Styles = (.body3Strong, .black)
+      static let city: Styles = (.caption, .black)
+      static let country: Styles = (.cta, .black)
     }
   }
 
@@ -42,9 +43,6 @@ final class EventDetailsPresenter: AttributedStringConvertible {
     interactor = dependencies.interactor
     router = dependencies.router
   }
-
-  // MARK: - Privates
-
 }
 
 // MARK: - EventDetailsPresenterInput
@@ -52,6 +50,10 @@ final class EventDetailsPresenter: AttributedStringConvertible {
 extension EventDetailsPresenter: EventDetailsPresenterInput {
   func viewDidLoad() {
     interactor.retrieve()
+  }
+
+  func didTapOnRightBarButton() {
+    interactor.addToFavorites()
   }
 }
 
@@ -65,8 +67,12 @@ extension EventDetailsPresenter: EventDetailsInteractorOutput {
   func display(_ item: EventDetailsItemProtocol) {
     output?.hideLoading()
     guard let imageURL = URL(string: item.image) else { return }
+
+    let formatter = DateFormatter()
+    formatter.dateFormat = Constants.dateFormat
+
     let title = convertText(item.title, style: Constants.Style.title)
-    let datetimeLocal = convertText(item.datetimeLocal, style: Constants.Style.datetimeLocal)
+    let datetimeLocal = convertText(formatter.string(from: item.datetimeLocal), style: Constants.Style.datetimeLocal)
     let type = convertText(item.type, style: Constants.Style.type)
     let name = convertText(item.name, style: Constants.Style.name)
     let city = convertText(item.city, style: Constants.Style.city)

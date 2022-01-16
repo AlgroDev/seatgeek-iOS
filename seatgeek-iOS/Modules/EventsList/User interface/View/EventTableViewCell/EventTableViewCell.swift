@@ -12,7 +12,13 @@ class EventTableViewCell: UITableViewCell {
 
   // MARK: - Outlets
 
-  @IBOutlet private(set) weak var eventImageView: UIImageView!
+  @IBOutlet private(set) weak var eventImageView: UIImageView! {
+    didSet {
+      self.layoutIfNeeded()
+      eventImageView.layer.cornerRadius = 10
+      eventImageView.layer.masksToBounds = true
+    }
+  }
   @IBOutlet private(set) weak var titleLabel: UILabel!
   @IBOutlet private(set) weak var addressLabel: UILabel!
   @IBOutlet private(set) weak var dateLabel: UILabel!

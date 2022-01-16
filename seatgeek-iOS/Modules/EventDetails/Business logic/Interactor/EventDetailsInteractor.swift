@@ -72,13 +72,17 @@ extension EventDetailsInteractor: EventDetailsInteractorInput {
       self?.output?.display(item)
     }
   }
+
+  func addToFavorites() {
+    let isFaborite = dataSource
+  }
 }
 
 // MARK: - EventDetailsItemProtocol
 
 private struct EventDetailsItem: EventDetailsItemProtocol {
   var title: String
-  var datetimeLocal: String
+  var datetimeLocal: Date
   var type: String
   var name: String
   var city: String

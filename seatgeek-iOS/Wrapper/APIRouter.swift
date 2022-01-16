@@ -14,8 +14,7 @@ enum APIRouter {
   case searchEvents(String)
 
   private enum Constant {
-    static let eventListBaseURL = "https://api.seatgeek.com"
-    static let searchEventBaseURL = "https://api.seatgeek.com"
+    static let baseURL = "https://api.seatgeek.com"
     static let version = "2"
     static let apiKey = "MjUzMzEwOTV8MTY0MjA0NTk1OS4xMDc2NzE1"
     static let apikeyString = "client_id"
@@ -24,9 +23,9 @@ enum APIRouter {
   var baseURL: String {
     switch self {
     case .fetchEventsList:
-      return Constant.eventListBaseURL
+      return Constant.baseURL
     case .searchEvents:
-      return Constant.searchEventBaseURL
+      return Constant.baseURL
     }
   }
 

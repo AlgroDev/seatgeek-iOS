@@ -1,5 +1,5 @@
 //
-//  EventsListAdapter.swift
+//  EventNetworkItemProtocol.swift
 //  seatgeek-iOS
 //
 //  Created by Mohammed HIMOUD on 13/01/2022.
@@ -36,37 +36,7 @@ enum EventsListAdapterError: Error {
 }
 
 
-public struct EventsListAdapterCodableResponse: Codable {
-  let events: [EventsListAdapterCodableResponseItem]
-}
 
-public struct EventsListAdapterCodableResponseItem: Codable {
-  var type: String?
-  var id: Int?
-  var datetimeLocal: String?
-  var venue: VenueCodableResponseItem?
-  var performers: [PerformersCodableResponseItem]?
-  var title: String?
-
-  enum CodingKeys: String, CodingKey {
-    case type
-    case id
-    case datetimeLocal = "datetime_local"
-    case venue
-    case performers
-    case title
-  }
-}
-
-public struct VenueCodableResponseItem: Codable {
-  var name: String?
-  var country: String?
-  var city: String?
-}
-
-public struct PerformersCodableResponseItem: Codable {
-  var image: String?
-}
 
 // MARK: - EventNetworkItemProtocol
 

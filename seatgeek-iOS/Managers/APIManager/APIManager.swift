@@ -47,6 +47,9 @@ extension APIManager: APIManagerProtocol {
     sessionManager.request(APIRouter.fetchEventsList)
       .responseDecodable(of: EventsListAdapterCodableResponse.self) { response in
         guard let repositories = response.value else {
+          return completion(.failure(.server))
+        }
+        if repositories.events.isEmpty {
           return completion(.failure(.noData))
         }
         let events = repositories.events.map { event in
@@ -65,6 +68,9 @@ extension APIManager: APIManagerProtocol {
     sessionManager.request(APIRouter.searchEvents(event))
       .responseDecodable(of: EventsListAdapterCodableResponse.self) { response in
         guard let repositories = response.value else {
+          return completion(.failure(.server))
+        }
+        if repositories.events.isEmpty {
           return completion(.failure(.noData))
         }
         let events = repositories.events.map { event in

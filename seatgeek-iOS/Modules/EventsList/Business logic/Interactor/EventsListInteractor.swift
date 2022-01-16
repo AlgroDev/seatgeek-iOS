@@ -53,12 +53,16 @@ final class EventsListInteractor {
 
   private func notifyNetworkError() {
     mainQueue.async { [weak self] in
+      self?.dataSource.curents = []
+      self?.output?.updateCategories()
       self?.output?.notifyNetworkError()
     }
   }
 
   private func notifyServerError() {
     mainQueue.async { [weak self] in
+      self?.dataSource.curents = []
+      self?.output?.updateCategories()
       self?.output?.notifyServerError()
     }
   }
@@ -158,7 +162,9 @@ extension EventsListInteractor: EventsListInteractorInput {
   }
 
   func search(event: String) {
-    if event.count < Constants.defaultMinChar {
+    if event.isEmpty {
+      dataSource.curents = dataSource.events
+      output?.updateCategories()
       return
     }
     searchEventRepository.retrieve(event: event) { [weak self] result in
@@ -189,7 +195,7 @@ extension EventsListInteractor: EventsListInteractorInput {
     let item = dataSource.curents.safe[index]
 
     return EventsListItem(title: item?.title ?? "",
-                          datetimeLocal: item?.datetimeLocal ?? "",
+                          datetimeLocal: item?.datetimeLocal ?? Date(),
                           type: item?.type ?? "",
                           name: item?.venue?.name ?? "",
                           city: item?.venue?.city ?? "",
@@ -208,7 +214,7 @@ extension EventsListInteractor: EventsListInteractorInput {
 
 private struct EventsListItem: EventsListItemProtocol {
   var title: String
-  var datetimeLocal: String
+  var datetimeLocal: Date
   var type: String
   var name: String
   var city: String
