@@ -3,7 +3,7 @@
  The following contributing guidelines intend to ease contribution on this project. These are mostly guidelines, not rules.
 
 ## Table of Contents
-* [Installing Cocoapods](#Installing Cocoapods)
+* [InstallingCocoapods](#Installing Cocoapods)
 * [Styleguides](#styleguides)
 	* [Git Commit Messages](#git-commit-messages)
 	* [Issue Reference](#issue-reference)
@@ -17,7 +17,6 @@
 
 > Wait for this to finish, don't touch your terminal.  It might take a couple minutes
 
-- Run command `pod setup`
 - Run command `pod install`
 ## Styleguides
 
@@ -141,5 +140,3 @@ Updating code due to code review changes.
 🏗
 `:building_construction:`
 Making architectural changes.
-
-
