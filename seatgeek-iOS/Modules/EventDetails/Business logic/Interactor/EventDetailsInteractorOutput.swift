@@ -17,6 +17,7 @@ public protocol EventDetailsInteractorOutput: AnyObject {
   func notifyNetworkError()
   func notifyServerError()
   func display(_ item: EventDetailsItemProtocol)
+  func item(_ isFavorite: Bool)
 }
 
 public protocol EventDetailsItemProtocol {
@@ -27,4 +28,5 @@ public protocol EventDetailsItemProtocol {
   var city: String { get }
   var country: String { get }
   var image: String { get }
+  var isFavorite: Bool { get set }
 }

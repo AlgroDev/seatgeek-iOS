@@ -10,5 +10,5 @@ import UIKit
 
 protocol EventDetailsPresenterInput {
   func viewDidLoad()
-  func didTapOnRightBarButton()
+  func didTapOnFavoriteBarButton()
 }

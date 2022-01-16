@@ -52,7 +52,7 @@ extension EventDetailsPresenter: EventDetailsPresenterInput {
     interactor.retrieve()
   }
 
-  func didTapOnRightBarButton() {
+  func didTapOnFavoriteBarButton() {
     interactor.addToFavorites()
   }
 }
@@ -85,6 +85,11 @@ extension EventDetailsPresenter: EventDetailsInteractorOutput {
                                         country: country,
                                         image: imageURL)
     output?.show(viewItem)
+  }
+
+  func item(_ isFavorite: Bool) {
+    let favoriteImage = isFavorite ? Asset.favorite.image : Asset.notFavorite.image
+    output?.viewItem(favoriteImage)
   }
 
   func notifyLoading() {

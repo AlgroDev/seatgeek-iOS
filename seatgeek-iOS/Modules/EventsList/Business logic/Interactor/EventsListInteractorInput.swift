@@ -28,4 +28,5 @@ public protocol EventsListItemProtocol {
   var city: String { get }
   var country: String { get }
   var image: String { get }
+  var isFavorite: Bool { get set }
 }

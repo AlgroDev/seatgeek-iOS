@@ -493,9 +493,9 @@
 		D7D71E94278FF9B200A98AB7 /* Interactor */ = {
 			isa = PBXGroup;
 			children = (
-				D7D71E30278FEEFC00A98AB7 /* EventsListInteractorOutput.swift */,
-				D7D71E34278FEEFC00A98AB7 /* EventsListInteractorInput.swift */,
 				D7D71E3B278FEEFC00A98AB7 /* EventsListInteractor.swift */,
+				D7D71E34278FEEFC00A98AB7 /* EventsListInteractorInput.swift */,
+				D7D71E30278FEEFC00A98AB7 /* EventsListInteractorOutput.swift */,
 			);
 			path = Interactor;
 			sourceTree = "<group>";

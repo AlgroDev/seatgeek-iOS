@@ -12,6 +12,7 @@ protocol EventDetailsPresenterOutput: AnyObject {
   func showLoading()
   func hideLoading()
   func show(_ viewItem: EventDetailsViewItemProtocol)
+  func viewItem(_ favoriteImage: UIImage)
 }
 
 public protocol EventDetailsViewItemProtocol {

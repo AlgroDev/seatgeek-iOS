@@ -55,26 +55,55 @@ extension EventDetailsInteractor: EventDetailsInteractorInput {
     output?.setDefaultValues()
     output?.notifyLoading()
     selectedEventRepository.get { [weak self] event in
-      guard let title = event?.title,
+      guard let id = event?.id,
+            let title = event?.title,
             let datetimeLocal = event?.datetimeLocal,
             let type = event?.type,
             let name = event?.venue?.name,
             let city = event?.venue?.city,
             let country = event?.venue?.country,
             let image = event?.performers.first?.image else { return }
+      var isFavorit = false
+      if let ids = SaveManager.get([Int].self, forKey: .favoriteEvent),
+         !ids.isEmpty,
+         !ids.filter({ $0 == id }).isEmpty {
+          isFavorit = true
+      }
       let item = EventDetailsItem(title: title,
                                   datetimeLocal: datetimeLocal,
                                   type: type,
                                   name: name,
                                   city: city,
                                   country: country,
-                                  image: image)
+                                  image: image,
+                                  isFavorite: isFavorit)
+      self?.dataSource.isFavorite = isFavorit
+      self?.dataSource.id = id
+      self?.output?.item(isFavorit)
       self?.output?.display(item)
     }
   }
 
   func addToFavorites() {
-    let isFaborite = dataSource
+    guard var ids = SaveManager.get([Int].self, forKey: .favoriteEvent),
+            !ids.isEmpty
+    else {
+      dataSource.isFavorite = true
+      SaveManager.set([dataSource.id], forKey: .favoriteEvent)
+      output?.item(dataSource.isFavorite)
+      return
+    }
+
+    if ids.filter({ $0 == dataSource.id }).isEmpty {
+      ids.append(dataSource.id)
+      SaveManager.set(ids, forKey: .favoriteEvent)
+      dataSource.isFavorite = true
+    } else {
+      let newIds = ids.filter { $0 != dataSource.id }
+      SaveManager.set(newIds, forKey: .favoriteEvent)
+      dataSource.isFavorite = false
+    }
+    output?.item(dataSource.isFavorite)
   }
 }
 
@@ -88,4 +117,5 @@ private struct EventDetailsItem: EventDetailsItemProtocol {
   var city: String
   var country: String
   var image: String
+  var isFavorite: Bool
 }

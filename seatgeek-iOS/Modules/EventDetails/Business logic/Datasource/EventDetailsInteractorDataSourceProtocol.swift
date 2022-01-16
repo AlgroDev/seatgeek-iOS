@@ -10,8 +10,7 @@
 
 import Foundation
 
-protocol EventDetailsInteractorDataSourceItemProtocol {
-  var identifier: String { get }
+protocol EventDetailsInteractorDataSourceProtocol {
+  var id: Int { get set }
+  var isFavorite: Bool { get set }
 }
-
-protocol EventDetailsInteractorDataSourceProtocol {}

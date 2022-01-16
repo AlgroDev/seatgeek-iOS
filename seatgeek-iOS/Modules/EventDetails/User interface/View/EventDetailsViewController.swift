@@ -41,25 +41,19 @@ class EventDetailsViewController: UIViewController, Loadable {
     self.dependencies.presenter?.viewDidLoad()
   }
 
-  @IBAction func favoriteBarItem(_ sender: Bool) {
-    if ((navigationItem.leftBarButtonItem?.isSelected) != nil) {
-      navigationItem.leftBarButtonItem?.image = Asset.favorite.image
-      return
-    }
-    navigationItem.leftBarButtonItem?.image = Asset.notFavorite.image
-  }
+  // MARK: - Private
 
   private func setupRightBarButton() {
     navigationItem.rightBarButtonItem = UIBarButtonItem(image: Asset.notFavorite.image,
                                                        landscapeImagePhone: Asset.notFavorite.image,
                                                        style: .plain,
                                                        target: self,
-                                                       action: #selector(didTapOnRightBarButton))
+                                                       action: #selector(didTapOnFavoriteBarButton))
     navigationItem.rightBarButtonItem?.tintColor = .systemRed
   }
 
-  @objc private func didTapOnRightBarButton() {
-    navigationItem.rightBarButtonItem?.image = Asset.favorite.image
+  @objc private func didTapOnFavoriteBarButton() {
+    dependencies.presenter.didTapOnFavoriteBarButton()
   }
 }
 
@@ -77,7 +71,11 @@ extension EventDetailsViewController: EventDetailsPresenterOutput {
     label.textAlignment = .center
     self.navigationItem.titleView = label
   }
-  
+
+  func viewItem(_ favoriteImage: UIImage) {
+    navigationItem.rightBarButtonItem?.image = favoriteImage
+  }
+
   func showLoading() {
     startLoading()
   }

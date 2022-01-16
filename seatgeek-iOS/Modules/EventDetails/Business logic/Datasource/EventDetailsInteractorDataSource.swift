@@ -10,4 +10,7 @@
 
 import Foundation
 
-final class EventDetailsInteractorDataSource: EventDetailsInteractorDataSourceProtocol {}
+final class EventDetailsInteractorDataSource: EventDetailsInteractorDataSourceProtocol {
+  var id: Int = 0
+  var isFavorite: Bool = false
+}
