@@ -3,7 +3,7 @@
  The following contributing guidelines intend to ease contribution on this project. These are mostly guidelines, not rules.
 
 ## Table of Contents
-* [InstallingCocoapods](#Installing Cocoapods)
+* [Installing Cocoapods](#Installing-Cocoaposs)
 * [Styleguides](#styleguides)
 	* [Git Commit Messages](#git-commit-messages)
 	* [Issue Reference](#issue-reference)
@@ -140,3 +140,5 @@ Updating code due to code review changes.
 🏗
 `:building_construction:`
 Making architectural changes.
+
+
