@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		22604E8C0C71FCBE98E52A60 /* Pods_seatgeek_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFB6A9424F5C2D7F6D15A522 /* Pods_seatgeek_iOS.framework */; };
+		D76F83E027952054001A2789 /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D76F83DF27952054001A2789 /* UIColor+Extensions.swift */; };
 		D7B33755279438A200D03C82 /* DateFormatter+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7B33754279438A200D03C82 /* DateFormatter+Extensions.swift */; };
 		D7B337572794444800D03C82 /* EventsListCodableResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7B337562794444800D03C82 /* EventsListCodableResponse.swift */; };
 		D7B3375D27945D9C00D03C82 /* SaveManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7B3375C27945D9C00D03C82 /* SaveManager.swift */; };
@@ -85,6 +86,7 @@
 /* Begin PBXFileReference section */
 		11D14E61CFA0BBC6291F811C /* Pods-seatgeek-iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-seatgeek-iOS.debug.xcconfig"; path = "Target Support Files/Pods-seatgeek-iOS/Pods-seatgeek-iOS.debug.xcconfig"; sourceTree = "<group>"; };
 		5B4909EB14AD96703E4DE4CE /* Pods-seatgeek-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-seatgeek-iOS.release.xcconfig"; path = "Target Support Files/Pods-seatgeek-iOS/Pods-seatgeek-iOS.release.xcconfig"; sourceTree = "<group>"; };
+		D76F83DF27952054001A2789 /* UIColor+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
 		D7B33754279438A200D03C82 /* DateFormatter+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateFormatter+Extensions.swift"; sourceTree = "<group>"; };
 		D7B337562794444800D03C82 /* EventsListCodableResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsListCodableResponse.swift; sourceTree = "<group>"; };
 		D7B3375C27945D9C00D03C82 /* SaveManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveManager.swift; sourceTree = "<group>"; };
@@ -417,6 +419,7 @@
 				D7D71EA727906B4800A98AB7 /* Collection+Extensions.swift */,
 				D7D3839D279131AA00619C9A /* NSMutableAttributedString+Extensions.swift */,
 				D7B33754279438A200D03C82 /* DateFormatter+Extensions.swift */,
+				D76F83DF27952054001A2789 /* UIColor+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -747,6 +750,7 @@
 				D7D22A472792D7CF00E0C8B2 /* NetworkLogger.swift in Sources */,
 				D7D38394279129E600619C9A /* SelectedEventRepository.swift in Sources */,
 				D7D38396279129FA00619C9A /* SelectedEventRepositoryProtocol.swift in Sources */,
+				D76F83E027952054001A2789 /* UIColor+Extensions.swift in Sources */,
 				D7D71E5B278FEF5E00A98AB7 /* Loadable.swift in Sources */,
 				D7D383A327914FF100619C9A /* DesignSystemImageDownloader.swift in Sources */,
 				D7D71E4C278FEEFC00A98AB7 /* EventsListInteractorModuleFactory.swift in Sources */,

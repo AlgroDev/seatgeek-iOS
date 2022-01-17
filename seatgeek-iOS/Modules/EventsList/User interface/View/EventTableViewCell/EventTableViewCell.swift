@@ -23,4 +23,5 @@ class EventTableViewCell: UITableViewCell {
   @IBOutlet private(set) weak var titleLabel: UILabel!
   @IBOutlet private(set) weak var addressLabel: UILabel!
   @IBOutlet private(set) weak var dateLabel: UILabel!
+  @IBOutlet private(set) weak var typeLabel: UILabel!
 }

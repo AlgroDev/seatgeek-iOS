@@ -71,6 +71,7 @@ extension EventsListViewController: UITableViewDataSource {
     cell.titleLabel.numberOfLines = 2
     cell.dateLabel.attributedText = viewItem?.datetimeLocal
     cell.addressLabel.attributedText = viewItem?.city
+    cell.typeLabel.attributedText = viewItem?.type
     cell.favoriteImageView.image = viewItem?.isFavoriteImage
     imageLoader.loadImage(imageView: cell.eventImageView, url: viewItem?.image, placeholder: UIImage(), animated: true)
 

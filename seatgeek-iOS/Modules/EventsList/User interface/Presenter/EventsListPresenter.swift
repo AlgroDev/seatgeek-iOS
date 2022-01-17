@@ -23,7 +23,7 @@ final class EventsListPresenter: AttributedStringConvertible {
     enum Style {
       static let title: Styles = (.body1, .black)
       static let datetimeLocal: Styles = (.body2, .gray)
-      static let type: Styles = (.body3, .black)
+      static let type: Styles = (.caption, .gray)
       static let name: Styles = (.body3Strong, .black)
       static let city: Styles = (.caption, .gray)
       static let country: Styles = (.cta, .gray)
@@ -68,7 +68,7 @@ extension EventsListPresenter: EventsListPresenterInput {
 
     let title = convertText(viewItem.title, style: Constants.Style.title)
     let datetimeLocal = convertText(formatter.string(from: viewItem.datetimeLocal), style: Constants.Style.datetimeLocal)
-    let type = convertText(viewItem.type, style: Constants.Style.type)
+    let type = convertText(viewItem.type.uppercased(), style: Constants.Style.type)
     let name = convertText(viewItem.name, style: Constants.Style.name)
     let city = convertText(viewItem.city, style: Constants.Style.city)
     let country = convertText(viewItem.country, style: Constants.Style.country)
