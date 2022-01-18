@@ -51,7 +51,7 @@
                             <constraint firstAttribute="height" constant="24" id="mu1-xt-SyY"/>
                         </constraints>
                     </imageView>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hpB-nd-8Ue">
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hpB-nd-8Ue">
                         <rect key="frame" x="16" y="16" width="70" height="70"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="70" id="4Eb-2y-1YE"/>
