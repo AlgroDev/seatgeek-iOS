@@ -22,12 +22,12 @@ final class EventDetailsPresenter: AttributedStringConvertible {
     static let title = ""
     static let dateFormat = "EEE, dd MMM dd yyyy hh:mm at"
     enum Style {
-      static let title: Styles = (.title1, .black)
-      static let datetimeLocal: Styles = (.body2, .black)
-      static let type: Styles = (.body3, .black)
+      static let title: Styles = (.body1, .black)
+      static let datetimeLocal: Styles = (.body2, .gray)
+      static let type: Styles = (.caption, .gray)
       static let name: Styles = (.body3Strong, .black)
-      static let city: Styles = (.caption, .black)
-      static let country: Styles = (.cta, .black)
+      static let city: Styles = (.caption, .gray)
+      static let country: Styles = (.cta, .gray)
     }
   }
 

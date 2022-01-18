@@ -11,14 +11,14 @@
         <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="EventTableViewCell" rowHeight="139" id="fHH-tR-CAx" customClass="EventTableViewCell" customModule="seatgeek_iOS" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="375" height="139"/>
             <autoresizingMask key="autoresizingMask"/>
-            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="fHH-tR-CAx" id="6jD-mY-oWR">
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="fHH-tR-CAx" id="6jD-mY-oWR">
                 <rect key="frame" x="0.0" y="0.0" width="375" height="139"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="9LI-IC-RnY">
                         <rect key="frame" x="102" y="16" width="217" height="106"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k3h-RL-ynJ">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalCompressionResistancePriority="749" verticalCompressionResistancePriority="749" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k3h-RL-ynJ">
                                 <rect key="frame" x="0.0" y="0.0" width="217" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -62,7 +62,7 @@
                 <constraints>
                     <constraint firstItem="hpB-nd-8Ue" firstAttribute="leading" secondItem="6jD-mY-oWR" secondAttribute="leading" constant="16" id="9vd-yr-tqR"/>
                     <constraint firstItem="hpB-nd-8Ue" firstAttribute="top" secondItem="9LI-IC-RnY" secondAttribute="top" id="MKq-XN-Pzb"/>
-                    <constraint firstAttribute="bottom" secondItem="hpB-nd-8Ue" secondAttribute="bottom" constant="32" id="RQt-eC-p81"/>
+                    <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="hpB-nd-8Ue" secondAttribute="bottom" constant="32" id="RQt-eC-p81"/>
                     <constraint firstAttribute="trailing" secondItem="Y6f-yV-lbT" secondAttribute="trailing" constant="16" id="UBC-s9-bgV"/>
                     <constraint firstItem="Y6f-yV-lbT" firstAttribute="leading" secondItem="9LI-IC-RnY" secondAttribute="trailing" constant="16" id="brJ-dI-mf3"/>
                     <constraint firstItem="Y6f-yV-lbT" firstAttribute="top" secondItem="6jD-mY-oWR" secondAttribute="top" constant="60" id="iNE-rI-FWh"/>
